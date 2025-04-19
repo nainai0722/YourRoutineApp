@@ -1,8 +1,8 @@
 //
 //  Item.swift
-//  YourRoutineApp
+//  YourMoneyApp
 //
-//  Created by 指原奈々 on 2025/04/19.
+//  Created by 指原奈々 on 2025/03/02.
 //
 
 import Foundation

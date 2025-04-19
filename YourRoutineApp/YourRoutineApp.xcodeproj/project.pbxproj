@@ -6,6 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F8F5E1442DB3889100361156 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F8F5E1432DB3889100361156 /* FirebaseAnalytics */; };
+		F8F5E1552DB3890200361156 /* YourRoutine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E14A2DB3890200361156 /* YourRoutine.framework */; };
+		F8F5E15F2DB3890200361156 /* YourRoutine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E14A2DB3890200361156 /* YourRoutine.framework */; };
+		F8F5E1602DB3890200361156 /* YourRoutine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E14A2DB3890200361156 /* YourRoutine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8F5E1712DB3895F00361156 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E1702DB3895F00361156 /* WidgetKit.framework */; };
+		F8F5E1732DB3895F00361156 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E1722DB3895F00361156 /* SwiftUI.framework */; };
+		F8F5E1842DB3896100361156 /* YourRoutineWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F8F5E16E2DB3895F00361156 /* YourRoutineWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F8F5E0C42DB3878F00361156 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,13 +31,96 @@
 			remoteGlobalIDString = F8F5E0B32DB3878D00361156;
 			remoteInfo = YourRoutineApp;
 		};
+		F8F5E1562DB3890200361156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8F5E0AC2DB3878D00361156 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8F5E1492DB3890200361156;
+			remoteInfo = YourRoutine;
+		};
+		F8F5E1582DB3890200361156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8F5E0AC2DB3878D00361156 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8F5E0B32DB3878D00361156;
+			remoteInfo = YourRoutineApp;
+		};
+		F8F5E15D2DB3890200361156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8F5E0AC2DB3878D00361156 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8F5E1492DB3890200361156;
+			remoteInfo = YourRoutine;
+		};
+		F8F5E1822DB3896100361156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8F5E0AC2DB3878D00361156 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8F5E16D2DB3895F00361156;
+			remoteInfo = YourRoutineWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8F5E1642DB3890200361156 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F8F5E1602DB3890200361156 /* YourRoutine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F5E1892DB3896100361156 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F8F5E1842DB3896100361156 /* YourRoutineWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F8F5E0B42DB3878D00361156 /* YourRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E0C32DB3878F00361156 /* YourRoutineAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E0CD2DB3878F00361156 /* YourRoutineAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F5E14A2DB3890200361156 /* YourRoutine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YourRoutine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F5E1542DB3890200361156 /* YourRoutineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F5E16E2DB3895F00361156 /* YourRoutineWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = YourRoutineWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F5E1702DB3895F00361156 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F8F5E1722DB3895F00361156 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F8F5E18B2DB389D700361156 /* YourRoutineWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YourRoutineWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F83F6B512DB38EA200CDE074 /* Exceptions for "YourRoutine" folder in "YourRoutineApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ImageData.swift,
+			);
+			target = F8F5E0B32DB3878D00361156 /* YourRoutineApp */;
+		};
+		F83F6B522DB38EA200CDE074 /* Exceptions for "YourRoutine" folder in "YourRoutineWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ImageData.swift,
+			);
+			target = F8F5E16D2DB3895F00361156 /* YourRoutineWidgetExtension */;
+		};
+		F8F5E1852DB3896100361156 /* Exceptions for "YourRoutineWidget" folder in "YourRoutineWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F8F5E16D2DB3895F00361156 /* YourRoutineWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F8F5E0B62DB3878D00361156 /* YourRoutineApp */ = {
@@ -45,6 +138,28 @@
 			path = YourRoutineAppUITests;
 			sourceTree = "<group>";
 		};
+		F8F5E14B2DB3890200361156 /* YourRoutine */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F83F6B512DB38EA200CDE074 /* Exceptions for "YourRoutine" folder in "YourRoutineApp" target */,
+				F83F6B522DB38EA200CDE074 /* Exceptions for "YourRoutine" folder in "YourRoutineWidgetExtension" target */,
+			);
+			path = YourRoutine;
+			sourceTree = "<group>";
+		};
+		F8F5E15A2DB3890200361156 /* YourRoutineTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = YourRoutineTests;
+			sourceTree = "<group>";
+		};
+		F8F5E1742DB3895F00361156 /* YourRoutineWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F8F5E1852DB3896100361156 /* Exceptions for "YourRoutineWidget" folder in "YourRoutineWidgetExtension" target */,
+			);
+			path = YourRoutineWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +167,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F5E15F2DB3890200361156 /* YourRoutine.framework in Frameworks */,
+				F8F5E1442DB3889100361156 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,15 +186,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8F5E1472DB3890200361156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F5E1512DB3890200361156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8F5E1552DB3890200361156 /* YourRoutine.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F5E16B2DB3895F00361156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8F5E1732DB3895F00361156 /* SwiftUI.framework in Frameworks */,
+				F8F5E1712DB3895F00361156 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		F8F5E0AB2DB3878D00361156 = {
 			isa = PBXGroup;
 			children = (
+				F8F5E18B2DB389D700361156 /* YourRoutineWidgetExtension.entitlements */,
 				F8F5E0B62DB3878D00361156 /* YourRoutineApp */,
 				F8F5E0C62DB3878F00361156 /* YourRoutineAppTests */,
 				F8F5E0D02DB3878F00361156 /* YourRoutineAppUITests */,
+				F8F5E14B2DB3890200361156 /* YourRoutine */,
+				F8F5E15A2DB3890200361156 /* YourRoutineTests */,
+				F8F5E1742DB3895F00361156 /* YourRoutineWidget */,
+				F8F5E16F2DB3895F00361156 /* Frameworks */,
 				F8F5E0B52DB3878D00361156 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,11 +234,33 @@
 				F8F5E0B42DB3878D00361156 /* YourRoutineApp.app */,
 				F8F5E0C32DB3878F00361156 /* YourRoutineAppTests.xctest */,
 				F8F5E0CD2DB3878F00361156 /* YourRoutineAppUITests.xctest */,
+				F8F5E14A2DB3890200361156 /* YourRoutine.framework */,
+				F8F5E1542DB3890200361156 /* YourRoutineTests.xctest */,
+				F8F5E16E2DB3895F00361156 /* YourRoutineWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F8F5E16F2DB3895F00361156 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8F5E1702DB3895F00361156 /* WidgetKit.framework */,
+				F8F5E1722DB3895F00361156 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F8F5E1452DB3890200361156 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		F8F5E0B32DB3878D00361156 /* YourRoutineApp */ = {
@@ -102,16 +270,21 @@
 				F8F5E0B02DB3878D00361156 /* Sources */,
 				F8F5E0B12DB3878D00361156 /* Frameworks */,
 				F8F5E0B22DB3878D00361156 /* Resources */,
+				F8F5E1642DB3890200361156 /* Embed Frameworks */,
+				F8F5E1892DB3896100361156 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F8F5E15E2DB3890200361156 /* PBXTargetDependency */,
+				F8F5E1832DB3896100361156 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				F8F5E0B62DB3878D00361156 /* YourRoutineApp */,
 			);
 			name = YourRoutineApp;
 			packageProductDependencies = (
+				F8F5E1432DB3889100361156 /* FirebaseAnalytics */,
 			);
 			productName = YourRoutineApp;
 			productReference = F8F5E0B42DB3878D00361156 /* YourRoutineApp.app */;
@@ -163,6 +336,75 @@
 			productReference = F8F5E0CD2DB3878F00361156 /* YourRoutineAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F8F5E1492DB3890200361156 /* YourRoutine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8F5E1612DB3890200361156 /* Build configuration list for PBXNativeTarget "YourRoutine" */;
+			buildPhases = (
+				F8F5E1452DB3890200361156 /* Headers */,
+				F8F5E1462DB3890200361156 /* Sources */,
+				F8F5E1472DB3890200361156 /* Frameworks */,
+				F8F5E1482DB3890200361156 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F8F5E14B2DB3890200361156 /* YourRoutine */,
+			);
+			name = YourRoutine;
+			packageProductDependencies = (
+			);
+			productName = YourRoutine;
+			productReference = F8F5E14A2DB3890200361156 /* YourRoutine.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F8F5E1532DB3890200361156 /* YourRoutineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8F5E1652DB3890200361156 /* Build configuration list for PBXNativeTarget "YourRoutineTests" */;
+			buildPhases = (
+				F8F5E1502DB3890200361156 /* Sources */,
+				F8F5E1512DB3890200361156 /* Frameworks */,
+				F8F5E1522DB3890200361156 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8F5E1572DB3890200361156 /* PBXTargetDependency */,
+				F8F5E1592DB3890200361156 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F8F5E15A2DB3890200361156 /* YourRoutineTests */,
+			);
+			name = YourRoutineTests;
+			packageProductDependencies = (
+			);
+			productName = YourRoutineTests;
+			productReference = F8F5E1542DB3890200361156 /* YourRoutineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F8F5E16D2DB3895F00361156 /* YourRoutineWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8F5E1862DB3896100361156 /* Build configuration list for PBXNativeTarget "YourRoutineWidgetExtension" */;
+			buildPhases = (
+				F8F5E16A2DB3895F00361156 /* Sources */,
+				F8F5E16B2DB3895F00361156 /* Frameworks */,
+				F8F5E16C2DB3895F00361156 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F8F5E1742DB3895F00361156 /* YourRoutineWidget */,
+			);
+			name = YourRoutineWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = YourRoutineWidgetExtension;
+			productReference = F8F5E16E2DB3895F00361156 /* YourRoutineWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +426,16 @@
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = F8F5E0B32DB3878D00361156;
 					};
+					F8F5E1492DB3890200361156 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					F8F5E1532DB3890200361156 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = F8F5E0B32DB3878D00361156;
+					};
+					F8F5E16D2DB3895F00361156 = {
+						CreatedOnToolsVersion = 16.3;
+					};
 				};
 			};
 			buildConfigurationList = F8F5E0AF2DB3878D00361156 /* Build configuration list for PBXProject "YourRoutineApp" */;
@@ -195,6 +447,9 @@
 			);
 			mainGroup = F8F5E0AB2DB3878D00361156;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F8F5E1422DB3889100361156 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F8F5E0B52DB3878D00361156 /* Products */;
 			projectDirPath = "";
@@ -203,6 +458,9 @@
 				F8F5E0B32DB3878D00361156 /* YourRoutineApp */,
 				F8F5E0C22DB3878F00361156 /* YourRoutineAppTests */,
 				F8F5E0CC2DB3878F00361156 /* YourRoutineAppUITests */,
+				F8F5E1492DB3890200361156 /* YourRoutine */,
+				F8F5E1532DB3890200361156 /* YourRoutineTests */,
+				F8F5E16D2DB3895F00361156 /* YourRoutineWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +481,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F8F5E0CB2DB3878F00361156 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F5E1482DB3890200361156 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F5E1522DB3890200361156 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F5E16C2DB3895F00361156 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +532,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8F5E1462DB3890200361156 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F5E1502DB3890200361156 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F5E16A2DB3895F00361156 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +565,26 @@
 			isa = PBXTargetDependency;
 			target = F8F5E0B32DB3878D00361156 /* YourRoutineApp */;
 			targetProxy = F8F5E0CE2DB3878F00361156 /* PBXContainerItemProxy */;
+		};
+		F8F5E1572DB3890200361156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8F5E1492DB3890200361156 /* YourRoutine */;
+			targetProxy = F8F5E1562DB3890200361156 /* PBXContainerItemProxy */;
+		};
+		F8F5E1592DB3890200361156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8F5E0B32DB3878D00361156 /* YourRoutineApp */;
+			targetProxy = F8F5E1582DB3890200361156 /* PBXContainerItemProxy */;
+		};
+		F8F5E15E2DB3890200361156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8F5E1492DB3890200361156 /* YourRoutine */;
+			targetProxy = F8F5E15D2DB3890200361156 /* PBXContainerItemProxy */;
+		};
+		F8F5E1832DB3896100361156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8F5E16D2DB3895F00361156 /* YourRoutineWidgetExtension */;
+			targetProxy = F8F5E1822DB3896100361156 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -395,16 +715,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = YourRoutineApp/YourRoutineApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58J628MLWX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "おしたくしよう";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,16 +747,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = YourRoutineApp/YourRoutineApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58J628MLWX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "おしたくしよう";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +782,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58J628MLWX;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutineAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -473,7 +801,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58J628MLWX;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutineAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,6 +819,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58J628MLWX;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutineAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,6 +837,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58J628MLWX;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutineAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,6 +845,168 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = YourRoutineApp;
+			};
+			name = Release;
+		};
+		F8F5E1622DB3890200361156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58J628MLWX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutine;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F8F5E1632DB3890200361156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58J628MLWX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutine;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F8F5E1662DB3890200361156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58J628MLWX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YourRoutineApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YourRoutineApp";
+			};
+			name = Debug;
+		};
+		F8F5E1672DB3890200361156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58J628MLWX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YourRoutineApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YourRoutineApp";
+			};
+			name = Release;
+		};
+		F8F5E1872DB3896100361156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = YourRoutineWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58J628MLWX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YourRoutineWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = YourRoutineWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutineApp.YourRoutineWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8F5E1882DB3896100361156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = YourRoutineWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58J628MLWX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YourRoutineWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = YourRoutineWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutineApp.YourRoutineWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -557,7 +1049,53 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F8F5E1612DB3890200361156 /* Build configuration list for PBXNativeTarget "YourRoutine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8F5E1622DB3890200361156 /* Debug */,
+				F8F5E1632DB3890200361156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8F5E1652DB3890200361156 /* Build configuration list for PBXNativeTarget "YourRoutineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8F5E1662DB3890200361156 /* Debug */,
+				F8F5E1672DB3890200361156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8F5E1862DB3896100361156 /* Build configuration list for PBXNativeTarget "YourRoutineWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8F5E1872DB3896100361156 /* Debug */,
+				F8F5E1882DB3896100361156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8F5E1422DB3889100361156 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8F5E1432DB3889100361156 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8F5E1422DB3889100361156 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F8F5E0AC2DB3878D00361156 /* Project object */;
 }
