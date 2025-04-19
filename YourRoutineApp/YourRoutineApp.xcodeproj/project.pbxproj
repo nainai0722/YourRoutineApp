@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F83F6B542DB3B61200CDE074 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F83F6B532DB3B61200CDE074 /* PrivacyInfo.xcprivacy */; };
 		F8F5E1442DB3889100361156 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F8F5E1432DB3889100361156 /* FirebaseAnalytics */; };
 		F8F5E1552DB3890200361156 /* YourRoutine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E14A2DB3890200361156 /* YourRoutine.framework */; };
 		F8F5E15F2DB3890200361156 /* YourRoutine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E14A2DB3890200361156 /* YourRoutine.framework */; };
@@ -87,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F83F6B532DB3B61200CDE074 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		F8F5E0B42DB3878D00361156 /* YourRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E0C32DB3878F00361156 /* YourRoutineAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E0CD2DB3878F00361156 /* YourRoutineAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,13 @@
 			);
 			target = F8F5E16D2DB3895F00361156 /* YourRoutineWidgetExtension */;
 		};
+		F83F6B562DB3B9C000CDE074 /* Exceptions for "YourRoutineApp" folder in "YourRoutineApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F8F5E0B32DB3878D00361156 /* YourRoutineApp */;
+		};
 		F8F5E1852DB3896100361156 /* Exceptions for "YourRoutineWidget" folder in "YourRoutineWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -125,6 +134,9 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F8F5E0B62DB3878D00361156 /* YourRoutineApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F83F6B562DB3B9C000CDE074 /* Exceptions for "YourRoutineApp" folder in "YourRoutineApp" target */,
+			);
 			path = YourRoutineApp;
 			sourceTree = "<group>";
 		};
@@ -216,6 +228,7 @@
 		F8F5E0AB2DB3878D00361156 = {
 			isa = PBXGroup;
 			children = (
+				F83F6B532DB3B61200CDE074 /* PrivacyInfo.xcprivacy */,
 				F8F5E18B2DB389D700361156 /* YourRoutineWidgetExtension.entitlements */,
 				F8F5E0B62DB3878D00361156 /* YourRoutineApp */,
 				F8F5E0C62DB3878F00361156 /* YourRoutineAppTests */,
@@ -491,6 +504,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83F6B542DB3B61200CDE074 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,7 +735,9 @@
 				DEVELOPMENT_TEAM = 58J628MLWX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YourRoutineApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "おしたくしよう";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -753,7 +769,9 @@
 				DEVELOPMENT_TEAM = 58J628MLWX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YourRoutineApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "おしたくしよう";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
