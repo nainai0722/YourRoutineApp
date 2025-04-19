@@ -12,6 +12,7 @@ import SwiftData
 struct RoutineListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var routineTitles: [RoutineTitleTemplate]
+    let title: String
     var body: some View {
         NavigationStack {
             VStack {
@@ -26,11 +27,11 @@ struct RoutineListView: View {
                 }
             }
         }
-        .navigationTitle(Text("おしたくリスト"))
+        .navigationTitle(title)
     }
 }
 
 #Preview {
-    RoutineListView()
+    RoutineListView(title: "")
         .modelContainer(for: RoutineTitleTemplate.self)
 }

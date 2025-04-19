@@ -24,7 +24,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct YourRoutineAppApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Money.self,
             UserInfo.self,
             TodayData.self,
             Routine.self,
@@ -47,8 +46,6 @@ struct YourRoutineAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            EditRoutineView()
-//            PinnedImageDataList()
             RootView()
                 .onAppear() {
                     Analytics.setAnalyticsCollectionEnabled(true)
@@ -56,12 +53,8 @@ struct YourRoutineAppApp: App {
                     scheduleNotification(title: "おはよう！", body: "今日の予定を確認しよう☀️", hour: 7, minute: 45)
                     scheduleNotification(title: "おかえり！", body: "おかたづけしよう", hour: 18, minute: 45)
                     if let image = UIImage(named: "bath") {
-                        print("画像変換できた？")
                         saveImageToAppGroup(image: image, fileName: "bath.png")
                     }
-                    
-                    
-                    
                     if let data = UserDefaults(suiteName: "group.com.nanasashihara.yourroutineapp")?.data(forKey: "pinnedImageData") {
                         print("💾 pinnedImageDataあります！サイズ: \(data.count)")
                     } else {
@@ -103,9 +96,8 @@ struct YourRoutineAppApp: App {
         }
     }
 
-
     func resetDatabase() {
-        let container = try? ModelContainer(for: Money.self)
+        let container = try? ModelContainer(for: TodayData.self)
         let storeURL = container?.configurations.first?.url
 
         if let storeURL {

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F83F6B542DB3B61200CDE074 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F83F6B532DB3B61200CDE074 /* PrivacyInfo.xcprivacy */; };
+		F86A26A02DB3E6CC00DA0AD1 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */; };
+		F86A26A12DB3E6CC00DA0AD1 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */; };
+		F86A26A42DB3FB2B00DA0AD1 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = F86A26A32DB3FB2B00DA0AD1 /* BottomSheet */; };
 		F8F5E1442DB3889100361156 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F8F5E1432DB3889100361156 /* FirebaseAnalytics */; };
 		F8F5E1552DB3890200361156 /* YourRoutine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E14A2DB3890200361156 /* YourRoutine.framework */; };
 		F8F5E15F2DB3890200361156 /* YourRoutine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E14A2DB3890200361156 /* YourRoutine.framework */; };
@@ -89,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		F83F6B532DB3B61200CDE074 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Package.resolved; sourceTree = "<group>"; };
 		F8F5E0B42DB3878D00361156 /* YourRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E0C32DB3878F00361156 /* YourRoutineAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E0CD2DB3878F00361156 /* YourRoutineAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F5E15F2DB3890200361156 /* YourRoutine.framework in Frameworks */,
+				F86A26A42DB3FB2B00DA0AD1 /* BottomSheet in Frameworks */,
 				F8F5E1442DB3889100361156 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				F83F6B532DB3B61200CDE074 /* PrivacyInfo.xcprivacy */,
+				F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */,
 				F8F5E18B2DB389D700361156 /* YourRoutineWidgetExtension.entitlements */,
 				F8F5E0B62DB3878D00361156 /* YourRoutineApp */,
 				F8F5E0C62DB3878F00361156 /* YourRoutineAppTests */,
@@ -298,6 +304,7 @@
 			name = YourRoutineApp;
 			packageProductDependencies = (
 				F8F5E1432DB3889100361156 /* FirebaseAnalytics */,
+				F86A26A32DB3FB2B00DA0AD1 /* BottomSheet */,
 			);
 			productName = YourRoutineApp;
 			productReference = F8F5E0B42DB3878D00361156 /* YourRoutineApp.app */;
@@ -462,6 +469,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F8F5E1422DB3889100361156 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F86A26A22DB3FB2B00DA0AD1 /* XCRemoteSwiftPackageReference "bottom-sheet" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F8F5E0B52DB3878D00361156 /* Products */;
@@ -483,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F86A26A02DB3E6CC00DA0AD1 /* Package.resolved in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +513,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F86A26A12DB3E6CC00DA0AD1 /* Package.resolved in Resources */,
 				F83F6B542DB3B61200CDE074 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1097,6 +1107,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F86A26A22DB3FB2B00DA0AD1 /* XCRemoteSwiftPackageReference "bottom-sheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weitieda/bottom-sheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.12;
+			};
+		};
 		F8F5E1422DB3889100361156 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1108,6 +1126,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F86A26A32DB3FB2B00DA0AD1 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F86A26A22DB3FB2B00DA0AD1 /* XCRemoteSwiftPackageReference "bottom-sheet" */;
+			productName = BottomSheet;
+		};
 		F8F5E1432DB3889100361156 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F8F5E1422DB3889100361156 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

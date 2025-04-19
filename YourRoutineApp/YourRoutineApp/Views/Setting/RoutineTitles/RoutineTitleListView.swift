@@ -13,6 +13,7 @@ struct RoutineTitleListView: View {
     @Query private var routineTitles: [RoutineTitleTemplate]
     @State var isPresented :Bool = false
     @State private var selectedRoutineTitle: RoutineTitleTemplate?
+    let title: String
     var body: some View {
         VStack {
             List {
@@ -32,7 +33,7 @@ struct RoutineTitleListView: View {
                 }
             }
         }
-        .navigationTitle(Text("おしたくリスト"))
+        .navigationTitle(title)
         .overlay(
             Group {
                 if var selectedRoutineTitle = selectedRoutineTitle {
@@ -62,7 +63,7 @@ struct RoutineTitleListView: View {
 }
 
 #Preview {
-    RoutineTitleListView()
+    RoutineTitleListView(title:"")
         .modelContainer(for: RoutineTitleTemplate.self)
 }
 

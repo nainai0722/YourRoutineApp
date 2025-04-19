@@ -10,7 +10,6 @@ import SwiftData
 
 struct MainTabView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var moneys: [Money]
     @State private var selectedTab = 1  // 初期タブのインデックスを設定
     var body: some View {
         TabView {
@@ -19,7 +18,7 @@ struct MainTabView: View {
                     Label("おしたく", systemImage: "books.vertical")
                 }
                 .tag(1)
-            RoutineCalendarView()
+            RoutineCalendarView(isPopover: false, isPresented: false)
                 .tabItem {
                     Label("カレンダー", systemImage: "calendar")
                 }
@@ -41,7 +40,6 @@ struct MainTabView: View {
 #Preview {
     MainTabView()
         .modelContainer(for: [
-            Money.self,
             UserInfo.self,
             TodayData.self,
             Routine.self,

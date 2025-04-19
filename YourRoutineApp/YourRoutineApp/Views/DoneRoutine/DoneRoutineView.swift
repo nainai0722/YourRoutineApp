@@ -39,7 +39,7 @@ struct DoneRoutineView: View {
                 
                 if allDoneCheck() {
                     NavigationLink {
-                        RoutineCalendarView()
+                        RoutineCalendarView(isPopover: false,isPresented: false)
                     } label: {
                         Text("カレンダーを見る")
                             .modifier(CustomButtonLayoutWithSetColor(textColor: .white, backGroundColor: .red, fontType: .title))

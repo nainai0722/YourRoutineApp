@@ -7,11 +7,11 @@
 
 import SwiftUI
 import SwiftData
+import BottomSheet
 
 #Preview {
-    RoutineCalendarView()
+    RoutineCalendarView(isPopover: false, isPresented: false)
         .modelContainer(for: TodayData.self)
-    
 }
 
 struct RoutineCalendarView:View {
@@ -19,16 +19,18 @@ struct RoutineCalendarView:View {
     @State var selectedTodayData: TodayData?
     @State private var showDetail = false
     @Query private var routineTitles: [RoutineTitle]
+    @State var isPopover: Bool
+    @State var isPresented: Bool
     var completeTodayDatas: [TodayData] {
         fillMissingDates(todayDatas: todayDatas)
     }
     var body: some View {
         VStack {
-            Text("一週間のおしたく表")
+            Text("過去の履歴を見る")
                 .font(.title)
                 .bold()
                 .padding()
-                .padding(.top,30)
+            Divider()
             
             ScrollView(Axis.Set.horizontal) {
                 HStack (spacing: 2) {
@@ -37,19 +39,28 @@ struct RoutineCalendarView:View {
                     }
                 }
             }
-            
-            
-            if let selectedTodayData = selectedTodayData {
-                ScrollView {
-                    TodayDataDetailView(selectedTodayData: Binding(
-                        get: { selectedTodayData },
-                        set: { self.selectedTodayData = $0 }
-                    ))
+            .onChange(of: selectedTodayData) { oldState, newState in
+                if newState != nil {
+                    isPresented = true
+                    isPopover = false
+                } else {
+                    isPopover = true
                 }
             }
-            
+            .popover(isPresented: $isPopover) {
+                Text("日付をタップしてね")
+            }
+            .bottomSheet(isPresented: $isPresented, height: 600) {
+                if let selectedTodayData = selectedTodayData {
+                    ScrollView {
+                        TodayDataDetailView(selectedTodayData: Binding(
+                            get: { selectedTodayData },
+                            set: { self.selectedTodayData = $0 }
+                        ))
+                    }
+                }
+            }
             Spacer()
-            
         }
     }
     
@@ -114,17 +125,14 @@ struct TodayDataCellView:View {
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 
-                if todayData.morningRoutineDone {
-                    DoneTypeWeeklyStampView()
-                } else {
-                    EmptyCellView()
+                ForEach(todayData.routineTitles) { title in
+                    if title.done {
+                        DoneTypeWeeklyStampView()
+                    } else {
+                        EmptyCellView()
+                    }
                 }
-                if todayData.eveningRoutineDone {
-                    DoneTypeWeeklyStampView()
-                } else {
-                    EmptyCellView()
-                }
-                
+                Spacer()
             }
         }
     }
