@@ -37,6 +37,7 @@ public enum ImageCategory: String, CaseIterable, Codable {
     case foodDrink = "food-drink"
     case life = "life"
     case school = "school"
+    case event = "event"
 }
 
 @Model

@@ -51,11 +51,15 @@ struct RootView: View {
                 let imageData = ImageData(fileName: "food-drink_image\(i)", category: .foodDrink, isPinned: false, timestamp: Date())
                 modelContext.insert(imageData)
             }
-            for i in 1...20 {
+            for i in 1...70 {
+                let imageData = ImageData(fileName: "event_image\(i)", category: .event, isPinned: false, timestamp: Date())
+                modelContext.insert(imageData)
+            }
+            for i in 1...88 {
                 let imageData = ImageData(fileName: "school_image\(i)", category: .school, isPinned: false, timestamp: Date())
                 modelContext.insert(imageData)
             }
-            for i in 1...20 {
+            for i in 1...88 {
                 let imageData = ImageData(fileName: "life_image\(i)", category: .life, isPinned: false, timestamp: Date())
                 modelContext.insert(imageData)
             }
