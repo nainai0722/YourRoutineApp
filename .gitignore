@@ -1,2 +1,4 @@
 # Assets.xcassetsを無視
 YourRoutineApp/YourRoutineApp/Assets.xcassets/
+YourRoutineApp/YourRoutineApp/GoogleService-Info.plist
+YourRoutineApp/PrivacyInfo.xcprivacy
