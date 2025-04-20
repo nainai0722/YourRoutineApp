@@ -11,6 +11,7 @@ import SwiftData
 @Model
 final class RoutineTitle: Identifiable {
     @Attribute(.unique) var id: UUID
+    var templateTitleId: UUID?
     var name: String
     @Relationship var routines: [Routine]
     @Relationship(inverse: \TodayData.routineTitles)
@@ -30,7 +31,16 @@ final class RoutineTitle: Identifiable {
         self.done = false
         self.routines = Routine.mockThreeRoutines
     }
+    
     init(name: String, routines: [Routine]) {
+        self.name = name
+        self.id = UUID()
+        self.done = false
+        self.routines = routines
+    }
+    
+    init(templateTitleId: UUID?, name: String, routines: [Routine]) {
+        self.templateTitleId = templateTitleId
         self.name = name
         self.id = UUID()
         self.done = false

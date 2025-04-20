@@ -132,27 +132,11 @@ struct CustomCalendarViewView: View {
     func getRoutineTitlesFromTemplate(_ routineTitles: [RoutineTitleTemplate]) -> [RoutineTitle] {
         var todayRoutineTitle: [RoutineTitle] = []
         if routineTitles.isEmpty {
-            let morningRoutines = Routine.mockMorningRoutines.map { $0.cloned() }
-            let title1 = RoutineTitle(name: "あさのしたく", routines: morningRoutines)
-
-            let mockSleepTimeRoutines = Routine.mockSleepTimeRoutines.map { $0.cloned() }
-            let title2 = RoutineTitle(name: "ねるまえのしたく", routines: mockSleepTimeRoutines)
-
-            let mockEveningRoutines = Routine.mockEveningRoutines.map { $0.cloned() }
-            let title3 = RoutineTitle(name: "ゆうがたのしたく", routines: mockEveningRoutines)
-
-            
-            todayRoutineTitle.append(contentsOf: [title1, title2, title3])
-            print("なにもないので、デフォルトを追加")
-            print(todayRoutineTitle.count)
-            for title in todayRoutineTitle {
-                print("\(title.name)")
-            }
-            print("追加終わり")
-        } else {
-            for title in routineTitles {
-                todayRoutineTitle.append(convertTemplateToRoutine(title))
-            }
+            print("テンプレートのデータがないので調査が必要です")
+            return []
+        }
+        for title in routineTitles {
+            todayRoutineTitle.append(convertTemplateToRoutine(title))
         }
         return todayRoutineTitle
     }

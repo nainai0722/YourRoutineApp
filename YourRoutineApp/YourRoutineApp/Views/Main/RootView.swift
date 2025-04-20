@@ -42,10 +42,20 @@ struct RootView: View {
     func fetchImageData() async {
         do {
             let allImageData = try modelContext.fetch(FetchDescriptor<ImageData>())
+            
+            let defaultsData = allImageData.filter({$0.category == .defaults})
+            if defaultsData.isEmpty {
+                for i in 1...22 {
+                    let imageData = ImageData(fileName: "default_image\(i)", category: .defaults, isPinned: true, timestamp: Date())
+                    modelContext.insert(imageData)
+                }
+            }
+            
             // データが格納されているとき早期リターン
             if !allImageData.isEmpty {
                 return
             }
+            
             // すべてのデータを投入する
             for i in 1...70 {
                 let imageData = ImageData(fileName: "food-drink_image\(i)", category: .foodDrink, isPinned: false, timestamp: Date())
@@ -63,6 +73,11 @@ struct RootView: View {
                 let imageData = ImageData(fileName: "life_image\(i)", category: .life, isPinned: false, timestamp: Date())
                 modelContext.insert(imageData)
             }
+            
+//            for i in 1...22 {
+//                let imageData = ImageData(fileName: "default_image\(i)", category: .defaults, isPinned: true, timestamp: Date())
+//                modelContext.insert(imageData)
+//            }
             // データベースに保存
             try modelContext.save()
             

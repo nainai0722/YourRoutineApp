@@ -18,12 +18,15 @@ struct RoutineTitleListView: View {
         VStack {
             List {
                 ForEach(routineTitles) { routineTitle in
-                    Button(action: {
-                        selectedRoutineTitle = routineTitle
-                        isPresented.toggle()
-                    }) {
-                        Text("\(routineTitle.name)")
-                    }
+                    Text("\(routineTitle.name)")
+                        .onTapGesture {
+                            selectedRoutineTitle = routineTitle
+                            isPresented.toggle()
+                        }
+                        .onLongPressGesture {
+                            selectedRoutineTitle = routineTitle
+                            deleteRoutineTitle(selectedRoutineTitle)
+                        }
                 }
                 Button(action:{
                     selectedRoutineTitle = nil
@@ -36,28 +39,56 @@ struct RoutineTitleListView: View {
         .navigationTitle(title)
         .overlay(
             Group {
-                if var selectedRoutineTitle = selectedRoutineTitle {
+                if selectedRoutineTitle != nil {
                     EditRoutineTitleView(
                         isPresented: $isPresented,
-                        routineTitle: Binding(
-                            get: { selectedRoutineTitle },
-                            set: { selectedRoutineTitle = $0 }
+                        routineTitle: $selectedRoutineTitle
                         )
-                    )
                 } else {
                     AddRoutineTitleView(isPresented: $isPresented)
                 }
             }
         )
-
     }
+    
     
     func deleteRoutineTitle(_ routineTitle: RoutineTitleTemplate) {
         modelContext.delete(routineTitle)
+        fetchTodayDataRoutineTitle(routineTitle, isDelete: true)
         do {
             try modelContext.save()
         } catch {
             print("削除エラー: \(error.localizedDescription)")
+        }
+    }
+
+    func fetchTodayDataRoutineTitle(_ routineTitleTemplate: RoutineTitleTemplate, isDelete: Bool) {
+        do {
+            let allDays = try modelContext.fetch(FetchDescriptor<TodayData>())
+            let today = Calendar.current.startOfDay(for: Date()) // 今日の0:00のタイムスタンプ
+            
+            if let todayData = allDays.first(where: { Calendar.current.isDate($0.timestamp, inSameDayAs: today) })
+            {
+                // 今日のデータを取得したら、タイトルを限定し
+                if let routineTitle = todayData.routineTitles.first(where: { $0.templateTitleId == routineTitleTemplate.id }) {
+                    if isDelete {
+                        todayData.routineTitles.removeAll(where: {$0.templateTitleId == routineTitleTemplate.id})
+                        
+                    } else {
+                        routineTitle.name = routineTitle.name
+                    }
+                } else {
+                    let newRoutineTitle = convertTemplateToRoutine(routineTitleTemplate)
+                    todayData.routineTitles.append(newRoutineTitle)
+                    modelContext.insert(newRoutineTitle)
+                }
+                    try modelContext.save()
+            } else {
+                print("同日が見つからない")
+            }
+            
+        } catch {
+            print(error)
         }
     }
 }
@@ -132,6 +163,8 @@ struct AddRoutineTitleView: View {
     func addRoutineTitle(name: String) {
         let newRoutineTitle = RoutineTitleTemplate(name: name, routines: RoutineTemplateItem.mockThreeRoutines)
         modelContext.insert(newRoutineTitle)
+        
+        fetchTodayDataRoutineTitle(newRoutineTitle, isDelete: false)
         print("タイトルを追加しました")
         print("追加後の件数: \(routineTitles.count)") // Listの更新を確認
 
@@ -140,6 +173,35 @@ struct AddRoutineTitleView: View {
             print("追加後の件数: \(routineTitles.count)") // Listの更新を確認
         } catch {
             print("エラー: \(error.localizedDescription)")
+        }
+    }
+    func fetchTodayDataRoutineTitle(_ routineTitleTemplate: RoutineTitleTemplate, isDelete: Bool) {
+        do {
+            let allDays = try modelContext.fetch(FetchDescriptor<TodayData>())
+            let today = Calendar.current.startOfDay(for: Date()) // 今日の0:00のタイムスタンプ
+            
+            if let todayData = allDays.first(where: { Calendar.current.isDate($0.timestamp, inSameDayAs: today) })
+            {
+                // 今日のデータを取得したら、タイトルを限定し
+                if let routineTitle = todayData.routineTitles.first(where: { $0.templateTitleId == routineTitleTemplate.id }) {
+                    if isDelete {
+                        todayData.routineTitles.removeAll(where: {$0.templateTitleId == routineTitleTemplate.id})
+                        
+                    } else {
+                        routineTitle.name = routineTitle.name
+                    }
+                } else {
+                    let newRoutineTitle = convertTemplateToRoutine(routineTitleTemplate)
+                    todayData.routineTitles.append(newRoutineTitle)
+                    modelContext.insert(newRoutineTitle)
+                }
+                    try modelContext.save()
+            } else {
+                print("同日が見つからない")
+            }
+            
+        } catch {
+            print(error)
         }
     }
 }
@@ -202,10 +264,42 @@ struct EditRoutineTitleView: View {
     func saveChanges() {
         // 更新処理
         do {
-            try modelContext.save()
+            
+            let updateRoutineTitle = routineTitle
             isPresented = false
+            fetchTodayDataRoutineTitle(updateRoutineTitle, isDelete: false)
+            try modelContext.save()
         } catch {
             print("エラー: \(error.localizedDescription)")
+        }
+    }
+    func fetchTodayDataRoutineTitle(_ routineTitleTemplate: RoutineTitleTemplate, isDelete: Bool) {
+        do {
+            let allDays = try modelContext.fetch(FetchDescriptor<TodayData>())
+            let today = Calendar.current.startOfDay(for: Date()) // 今日の0:00のタイムスタンプ
+            
+            if let todayData = allDays.first(where: { Calendar.current.isDate($0.timestamp, inSameDayAs: today) })
+            {
+                // 今日のデータを取得したら、タイトルを限定し
+                if let routineTitle = todayData.routineTitles.first(where: { $0.templateTitleId == routineTitleTemplate.id }) {
+                    if isDelete {
+                        todayData.routineTitles.removeAll(where: {$0.templateTitleId == routineTitleTemplate.id})
+                        
+                    } else {
+                        routineTitle.name = routineTitleTemplate.name
+                    }
+                } else {
+                    let newRoutineTitle = convertTemplateToRoutine(routineTitleTemplate)
+                    todayData.routineTitles.append(newRoutineTitle)
+                    modelContext.insert(newRoutineTitle)
+                }
+                    try modelContext.save()
+            } else {
+                print("同日が見つからない")
+            }
+            
+        } catch {
+            print(error)
         }
     }
 }

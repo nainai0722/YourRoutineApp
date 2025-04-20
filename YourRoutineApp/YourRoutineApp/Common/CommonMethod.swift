@@ -8,12 +8,14 @@
 import Foundation
 import SwiftData
 
+
 func convertTemplateToRoutine(_ template: RoutineTitleTemplate) -> RoutineTitle {
     let convertedRoutines = template.routines.map { item in
         Routine(id: item.id, name: item.name, done: false, imageName: item.imageName)
         
     }
-    return RoutineTitle(name: template.name, routines: convertedRoutines)
+//    return RoutineTitle(name: template.name, routines: convertedRoutines)
+    return RoutineTitle(templateTitleId: template.id, name: template.name, routines: convertedRoutines)
 }
 
 // DateComponents → Date へ変換する関数
@@ -21,3 +23,4 @@ func dateComponentsToDate(_ dateComponents: DateComponents) -> Date? {
     let calendar = Calendar.current
     return calendar.date(from: dateComponents)
 }
+

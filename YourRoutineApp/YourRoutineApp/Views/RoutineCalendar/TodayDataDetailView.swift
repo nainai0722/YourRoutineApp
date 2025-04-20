@@ -18,14 +18,15 @@ struct TodayDataDetailView: View {
         VStack {
             Text("\(selectedTodayData.timestamp.formattedMonthDayString_JP)のこまかい情報")
                 .font(.headline)
-            Text(selectedTodayData.kindergartenCalendarGone ? "true" : "false")
+            
+//            Text(selectedTodayData.timestamp.formattedString)
+//                .font(.footnote)
+            Divider()
+            
+            Text(selectedTodayData.kindergartenCalendarGone ? "幼稚園に行った" : "幼稚園に行っていない")
             if let kindergartenCalendarType = selectedTodayData.kindergartenCalendarType {
-                
                 Text(kindergartenCalendarType.rawValue)
             }
-            Text(selectedTodayData.timestamp.formattedString)
-                .font(.footnote)
-            Divider()
             
             ForEach(selectedTodayData.routineTitles){ title in
                 Text(title.name)

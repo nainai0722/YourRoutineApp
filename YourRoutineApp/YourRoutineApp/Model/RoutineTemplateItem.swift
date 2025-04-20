@@ -23,23 +23,23 @@ final class RoutineTemplateItem: Identifiable {
         self.imageName = imageName
     }
     
-    static let mockWearRoutine = RoutineTemplateItem(name: "きがえる", done: true, imageName: "wear")
-    static let mockEatRoutine = RoutineTemplateItem(name: "たべる", done: false, imageName: "eat")
-    static let mockEToiletRoutine = RoutineTemplateItem(name: "トイレ", done: false, imageName: "toilet")
-    static let mockBottleRoutine = RoutineTemplateItem(name: "水筒", done: false, imageName: "bottle")
-    static let mockGoodsRoutine = RoutineTemplateItem(name: "給食セット", done: false, imageName: "goods")
-    static let scale = RoutineTemplateItem(name: "けんおん", done: false, imageName: "scale")
-    static let mock2 = RoutineTemplateItem(name: "カレンダー", done: false, imageName: "calender")
-    static let mock3 = RoutineTemplateItem(name: "お風呂", done: false, imageName: "bath")
-    static let mock4 = RoutineTemplateItem(name: "お風呂", done: false, imageName: "bath")
-    static let mock5 = RoutineTemplateItem(name: "かみをかわかす", done: false, imageName: "dry")
-    static let mock6 = RoutineTemplateItem(name: "はみがきをする", done: false, imageName: "hamigaki")
+    static let mockWearRoutine = RoutineTemplateItem(name: "きがえる", done: true, imageName: "default_image22")
+    static let mockEatRoutine = RoutineTemplateItem(name: "たべる", done: false, imageName: "default_image8")
+    static let mockEToiletRoutine = RoutineTemplateItem(name: "トイレ", done: false, imageName: "default_image20")
+    static let mockBottleRoutine = RoutineTemplateItem(name: "水筒", done: false, imageName: "default_image2")
+    static let mockGoodsRoutine = RoutineTemplateItem(name: "給食セット", done: false, imageName: "default_image14")
+    static let scale = RoutineTemplateItem(name: "けんおん", done: false, imageName: "default_image17")
+    static let mock2 = RoutineTemplateItem(name: "カレンダー", done: false, imageName: "default_image3")
+    static let mock3 = RoutineTemplateItem(name: "お風呂", done: false, imageName: "default_image1")
+    static let mock4 = RoutineTemplateItem(name: "お風呂", done: false, imageName: "default_image1")
+    static let mock5 = RoutineTemplateItem(name: "かみをかわかす", done: false, imageName: "default_image7")
+    static let mock6 = RoutineTemplateItem(name: "はみがきをする", done: false, imageName: "default_image11")
     // タオル
-    static let mock7 = RoutineTemplateItem(name: "タオル", done: false, imageName: "towel_kake")
+    static let mock7 = RoutineTemplateItem(name: "タオル", done: false, imageName: "default_image21")
     // 箸
-    static let mock8 = RoutineTemplateItem(name: "おはし", done: false, imageName: "syokki_hashi_woman")
+    static let mock8 = RoutineTemplateItem(name: "おはし", done: false, imageName: "default_image19")
     // 給食セット
-    static let mock9 = RoutineTemplateItem(name: "給食セット", done: false, imageName: "kyusyoku_fukuro")
+    static let mock9 = RoutineTemplateItem(name: "給食セット", done: false, imageName: "default_image14")
     
     static let mockThreeRoutines: [RoutineTemplateItem] = [mockEatRoutine, mockEToiletRoutine, mockWearRoutine]
     

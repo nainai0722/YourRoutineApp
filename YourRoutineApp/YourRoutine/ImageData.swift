@@ -38,6 +38,7 @@ public enum ImageCategory: String, CaseIterable, Codable {
     case life = "life"
     case school = "school"
     case event = "event"
+    case defaults = "default"
 }
 
 @Model
