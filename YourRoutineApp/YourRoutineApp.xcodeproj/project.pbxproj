@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F83F6B542DB3B61200CDE074 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F83F6B532DB3B61200CDE074 /* PrivacyInfo.xcprivacy */; };
 		F86A26A02DB3E6CC00DA0AD1 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */; };
 		F86A26A12DB3E6CC00DA0AD1 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */; };
 		F86A26A42DB3FB2B00DA0AD1 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = F86A26A32DB3FB2B00DA0AD1 /* BottomSheet */; };
@@ -91,7 +90,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F83F6B532DB3B61200CDE074 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Package.resolved; sourceTree = "<group>"; };
 		F8F5E0B42DB3878D00361156 /* YourRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E0C32DB3878F00361156 /* YourRoutineAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +103,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F821201B2DB4BB220061D40F /* Exceptions for "YourRoutineApp" folder in "YourRoutine" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PrivacyInfo.xcprivacy,
+			);
+			target = F8F5E1492DB3890200361156 /* YourRoutine */;
+		};
 		F83F6B512DB38EA200CDE074 /* Exceptions for "YourRoutine" folder in "YourRoutineApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -123,6 +128,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				PrivacyInfo.xcprivacy,
 			);
 			target = F8F5E0B32DB3878D00361156 /* YourRoutineApp */;
 		};
@@ -140,6 +146,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				F83F6B562DB3B9C000CDE074 /* Exceptions for "YourRoutineApp" folder in "YourRoutineApp" target */,
+				F821201B2DB4BB220061D40F /* Exceptions for "YourRoutineApp" folder in "YourRoutine" target */,
 			);
 			path = YourRoutineApp;
 			sourceTree = "<group>";
@@ -233,7 +240,6 @@
 		F8F5E0AB2DB3878D00361156 = {
 			isa = PBXGroup;
 			children = (
-				F83F6B532DB3B61200CDE074 /* PrivacyInfo.xcprivacy */,
 				F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */,
 				F8F5E18B2DB389D700361156 /* YourRoutineWidgetExtension.entitlements */,
 				F8F5E0B62DB3878D00361156 /* YourRoutineApp */,
@@ -514,7 +520,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F86A26A12DB3E6CC00DA0AD1 /* Package.resolved in Resources */,
-				F83F6B542DB3B61200CDE074 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
