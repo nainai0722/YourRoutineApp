@@ -12,28 +12,69 @@ struct RoutineTitleListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var routineTitles: [RoutineTitleTemplate]
     @State var isPresented :Bool = false
+    @State var isAlert: Bool = false
     @State private var selectedRoutineTitle: RoutineTitleTemplate?
+    @AppStorage("tempRoutineTitleId") var tempRoutineTitleId: String = ""
+    @AppStorage("tempRoutineTitleName") var tempRoutineTitleName: String = ""
     let title: String
     var body: some View {
         VStack {
             List {
+//                ForEach(routineTitles) { routineTitle in
+//                    
+//                    Text("\(routineTitle.name)")
+//                        .onTapGesture {
+//                            selectedRoutineTitle = routineTitle
+//                            isPresented.toggle()
+//                        }
+//                        .onLongPressGesture {
+//                            let toDelete = routineTitle
+//                            selectedRoutineTitle = toDelete
+//                            deleteRoutineTitle(selectedRoutineTitle)
+//                        }
+//                }
+                
                 ForEach(routineTitles) { routineTitle in
-                    Text("\(routineTitle.name)")
-                        .onTapGesture {
+                    RoutineTitleRow(
+                        routineTitle: routineTitle,
+                        onTap: {
                             selectedRoutineTitle = routineTitle
+                            tempRoutineTitleId = routineTitle.id.uuidString
+                            tempRoutineTitleName = routineTitle.name
                             isPresented.toggle()
-                        }
-                        .onLongPressGesture {
+                        },
+                        onLongPress: {
                             selectedRoutineTitle = routineTitle
-                            deleteRoutineTitle(selectedRoutineTitle)
+                            isAlert = true
+                            
                         }
+                    )
                 }
-                Button(action:{
-                    selectedRoutineTitle = nil
-                    isPresented.toggle()
-                }){
-                    Text("新しいしたくタイトルを追加する")
+                .alert(isPresented: $isAlert) {
+                    Alert(
+                        title: Text("確認"),
+                        message: Text("\(selectedRoutineTitle?.name ?? "")を削除しますか？"),
+                        primaryButton: .default(
+                            Text("キャンセル"),
+                            action: { }
+                        ),
+                        secondaryButton: .destructive(
+                            Text("削除"),
+                            action: {
+                                if let title = selectedRoutineTitle {
+                                    deleteRoutineTitle(title)
+                                }
+                            }
+                        )
+                    )
                 }
+
+
+                Text("新しいしたくタイトルを追加する")
+                    .onTapGesture {
+                        selectedRoutineTitle = nil
+                        isPresented.toggle()
+                    }
             }
         }
         .navigationTitle(title)
@@ -42,7 +83,6 @@ struct RoutineTitleListView: View {
                 if selectedRoutineTitle != nil {
                     EditRoutineTitleView(
                         isPresented: $isPresented,
-                        routineTitle: $selectedRoutineTitle
                         )
                 } else {
                     AddRoutineTitleView(isPresented: $isPresented)
@@ -92,6 +132,19 @@ struct RoutineTitleListView: View {
         }
     }
 }
+
+struct RoutineTitleRow: View {
+    let routineTitle: RoutineTitleTemplate
+    let onTap: () -> Void
+    let onLongPress: () -> Void
+
+    var body: some View {
+        Text("\(routineTitle.name)")
+            .onTapGesture(perform: onTap)
+            .onLongPressGesture(perform: onLongPress)
+    }
+}
+
 
 #Preview {
     RoutineTitleListView(title:"")
@@ -208,7 +261,9 @@ struct AddRoutineTitleView: View {
 struct EditRoutineTitleView: View {
     @Environment(\.modelContext) private var modelContext
     @Binding var isPresented: Bool
-    @Binding var routineTitle: RoutineTitleTemplate
+//    @Binding var routineTitle: RoutineTitleTemplate
+    @AppStorage("tempRoutineTitleId") var tempRoutineTitleId: String = ""
+    @AppStorage("tempRoutineTitleName") var tempRoutineTitleName: String = ""
 
     var body: some View {
         ZStack {
@@ -223,7 +278,7 @@ struct EditRoutineTitleView: View {
                     Text("おしたくを変更する")
                         .font(.headline)
                     
-                    TextField("タイトルを入力", text: $routineTitle.name)
+                    TextField("タイトルを入力", text: $tempRoutineTitleName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal, 20)
 
@@ -264,11 +319,15 @@ struct EditRoutineTitleView: View {
     func saveChanges() {
         // 更新処理
         do {
+            let titles = try modelContext.fetch(FetchDescriptor<RoutineTitleTemplate>())
             
-            let updateRoutineTitle = routineTitle
-            isPresented = false
-            fetchTodayDataRoutineTitle(updateRoutineTitle, isDelete: false)
-            try modelContext.save()
+            
+            if let updateRoutineTitle = titles.first(where: { $0.id == UUID(uuidString: tempRoutineTitleId) }) {
+                updateRoutineTitle.name = tempRoutineTitleName
+                isPresented = false
+                fetchTodayDataRoutineTitle(updateRoutineTitle, isDelete: false)
+                try modelContext.save()
+            }
         } catch {
             print("エラー: \(error.localizedDescription)")
         }

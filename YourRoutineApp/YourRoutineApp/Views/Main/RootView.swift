@@ -12,15 +12,31 @@ import SwiftData
 struct RootView: View {
     @State private var isInitialized: Bool = false
     @Environment(\.modelContext) private var modelContext
+    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
     var body: some View {
         Group {
+//            VStack {
+//                PrivacyView()
+//                    .opacity(isFirstLaunch ? 1 : 0)
+//                Button(action: {
+//                    isFirstLaunch = false
+//                }){
+//                    Text("同意する")
+//                        .frame(width: 50, height: 50)
+//                }
+//                .opacity(isFirstLaunch ? 1 : 0)
+//            }
+            
             if isInitialized {
                 MainTabView()
             } else {
                 SplashView()
+                    .opacity(isFirstLaunch ? 0 : 1)
             }
+            
         }
         .task {
+//            AppStatusManager.isFirstLaunch = true
             await initializeApp()
         }
     }
@@ -29,6 +45,7 @@ struct RootView: View {
         do {
             await fetchTodayData()
             await fetchImageData()
+            
 //            try await Task.sleep(nanoseconds: 1_000_000_000)
         } catch {
             print(error)

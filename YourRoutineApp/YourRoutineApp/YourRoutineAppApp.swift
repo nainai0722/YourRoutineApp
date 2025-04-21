@@ -32,7 +32,9 @@ struct YourRoutineAppApp: App {
             RoutineTitleTemplate.self,
             ImageData.self
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let modelConfiguration = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false)
 //　マイグレーションエラー対策
 //        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
 
@@ -47,32 +49,40 @@ struct YourRoutineAppApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environment(\.colorScheme, resolveColorScheme() ?? .light)
                 .onAppear() {
                     Analytics.setAnalyticsCollectionEnabled(true)
                     requestNotificationPermission()
                     scheduleNotification(title: "おはよう！", body: "今日の予定を確認しよう☀️", hour: 7, minute: 45)
                     scheduleNotification(title: "おかえり！", body: "おかたづけしよう", hour: 18, minute: 45)
                     if let image = UIImage(named: "bath") {
-                        saveImageToAppGroup(image: image, fileName: "bath.png")
+                        saveImageToAppGroup(image: image, fileName: "default_image1.png")
                     }
                     if let data = UserDefaults(suiteName: "group.com.nanasashihara.yourroutineapp")?.data(forKey: "pinnedImageData") {
                         print("💾 pinnedImageDataあります！サイズ: \(data.count)")
                     } else {
                         print("❌ pinnedImageDataが見つからない")
                     }
-
-
                 }
-//            ImageList()
-            
         }
         .modelContainer(sharedModelContainer)
     }
+    
+    @AppStorage("colorSchemeMode") private var colorSchemeMode: String = "system"
     init (){
 //        resetDatabase()
     }
     
     let appGroupID = "group.com.nanasashihara.yourroutineapp"
+    
+    private func resolveColorScheme() -> ColorScheme? {
+        switch colorSchemeMode {
+        case "dark": return .dark
+        case "light": return .light
+        default: return nil
+        }
+    }
+    
     func saveImageToAppGroup(image: UIImage, fileName: String) -> Bool {
         guard let data = image.pngData() else { return false }
         guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupID) else { return false }

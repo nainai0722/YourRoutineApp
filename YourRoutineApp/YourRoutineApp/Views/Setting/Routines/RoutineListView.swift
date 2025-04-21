@@ -28,6 +28,9 @@ struct RoutineListView: View {
             }
         }
         .navigationTitle(title)
+        .onAppear() {
+            AppStatusManager.isHintShown = false
+        }
     }
 }
 

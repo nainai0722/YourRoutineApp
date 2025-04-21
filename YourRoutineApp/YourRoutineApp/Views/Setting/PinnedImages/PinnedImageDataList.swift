@@ -12,18 +12,42 @@ import SwiftData
 struct PinnedImageDataList: View {
     @Environment(\.modelContext) private var modelContext
     @Query var imageDatas:[ImageData]
-
+    @State var selectedImageData: [ImageData] = []
+    @State private var selectedSection: ImageCategory = .defaults
+    enum SectionInfo: String, CaseIterable, Identifiable {
+        case skill, difficulty, category
+        var id: Self { self }
+    }
     var body: some View {
         VStack {
-            Text("お気に入りの画像を設定する")
-            GridViewWithPinned(imageData:imageDatas, onTap: { image in
+            GridViewWithPinned(imageData:selectedImageData.isEmpty ? imageDatas : selectedImageData, onTap: { image in
                 updateIsPinnedImageData(image)
             })
+            .onChange(of: selectedSection) { oldValue, newValue in
+                selectedImageData = imageDatas.filter {
+                    $0.category == newValue
+                }
+            }
         }
         .onAppear(){
             print("画像の数\(imageDatas.count)")
             for imageData in imageDatas {
                 print("\(imageData.fileName)")
+            }
+        }
+        .navigationTitle("お気に入りの画像を設定する")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Menu {
+                    ForEach(ImageCategory.allCases, id:\.self) { category in
+                        Button("\(category.rawValue)を表示") { selectedSection = category }
+                    }
+                    Button("すべて表示") { selectedImageData = [] }
+                } label: {
+                    Image(systemName: "line.3.horizontal.decrease.circle")
+                        .frame(width: 50, height: 50)
+                        .padding(.trailing, 30)
+                }
             }
         }
     }

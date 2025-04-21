@@ -16,6 +16,7 @@ struct DoneRoutineView: View {
     @State var todayData:TodayData = TodayData()
     @State var routineName: String = ""
     @State var routines :[Routine] = []
+    @State private var tutorialStep: TutorialStep = .step1_highlightShitakuButton
     var body : some View {
         ZStack {
             VStack {
@@ -26,6 +27,9 @@ struct DoneRoutineView: View {
                         Button(routineTitle.name, action: {
                             routines = routineTitle.routines
                             routineName = routineTitle.name
+                            if AppStatusManager.isHintShown {
+                                tutorialStep = .step2_showSettingsHint
+                            }
                         })
                     }
                 }

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct PrivacyView: View {
     var body: some View {
-        
-        WebViewScreen(urlString: "https://raw.githubusercontent.com/nainai0722/YourRoutineApp/refs/heads/main/YourRoutineApp/privacy_en.html?token=GHSAT0AAAAAADBW4WXV56DYG56MTI4P2C4U2AEQUIQ")
+        WebViewScreen(urlString: "https://nainai0722.github.io/privacy-policy-quizApp/privacy_en")
     }
 }
 
