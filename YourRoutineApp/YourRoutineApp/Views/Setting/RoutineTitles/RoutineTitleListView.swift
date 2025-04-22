@@ -20,20 +20,6 @@ struct RoutineTitleListView: View {
     var body: some View {
         VStack {
             List {
-//                ForEach(routineTitles) { routineTitle in
-//                    
-//                    Text("\(routineTitle.name)")
-//                        .onTapGesture {
-//                            selectedRoutineTitle = routineTitle
-//                            isPresented.toggle()
-//                        }
-//                        .onLongPressGesture {
-//                            let toDelete = routineTitle
-//                            selectedRoutineTitle = toDelete
-//                            deleteRoutineTitle(selectedRoutineTitle)
-//                        }
-//                }
-                
                 ForEach(routineTitles) { routineTitle in
                     RoutineTitleRow(
                         routineTitle: routineTitle,
@@ -80,9 +66,13 @@ struct RoutineTitleListView: View {
         .navigationTitle(title)
         .overlay(
             Group {
-                if selectedRoutineTitle != nil {
+                if let unwrapped = selectedRoutineTitle {
                     EditRoutineTitleView(
                         isPresented: $isPresented,
+                        routineTitle:  Binding<RoutineTitleTemplate>(
+                            get: { unwrapped },
+                            set: { selectedRoutineTitle = $0 }
+                        )
                         )
                 } else {
                     AddRoutineTitleView(isPresented: $isPresented)
@@ -261,7 +251,7 @@ struct AddRoutineTitleView: View {
 struct EditRoutineTitleView: View {
     @Environment(\.modelContext) private var modelContext
     @Binding var isPresented: Bool
-//    @Binding var routineTitle: RoutineTitleTemplate
+    @Binding var routineTitle: RoutineTitleTemplate
     @AppStorage("tempRoutineTitleId") var tempRoutineTitleId: String = ""
     @AppStorage("tempRoutineTitleName") var tempRoutineTitleName: String = ""
 
@@ -278,7 +268,7 @@ struct EditRoutineTitleView: View {
                     Text("おしたくを変更する")
                         .font(.headline)
                     
-                    TextField("タイトルを入力", text: $tempRoutineTitleName)
+                    TextField("タイトルを入力", text: $routineTitle.name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal, 20)
 
@@ -322,8 +312,9 @@ struct EditRoutineTitleView: View {
             let titles = try modelContext.fetch(FetchDescriptor<RoutineTitleTemplate>())
             
             
-            if let updateRoutineTitle = titles.first(where: { $0.id == UUID(uuidString: tempRoutineTitleId) }) {
-                updateRoutineTitle.name = tempRoutineTitleName
+//            if let updateRoutineTitle = titles.first(where: { $0.id == UUID(uuidString: tempRoutineTitleId) }) {
+            if let updateRoutineTitle = titles.first(where: {$0.id == routineTitle.id }) {
+                updateRoutineTitle.name = routineTitle.name
                 isPresented = false
                 fetchTodayDataRoutineTitle(updateRoutineTitle, isDelete: false)
                 try modelContext.save()
