@@ -218,6 +218,7 @@ struct AddRoutineTitleView: View {
             print("エラー: \(error.localizedDescription)")
         }
     }
+    
     func fetchTodayDataRoutineTitle(_ routineTitleTemplate: RoutineTitleTemplate, isDelete: Bool) {
         do {
             let allDays = try modelContext.fetch(FetchDescriptor<TodayData>())
@@ -310,9 +311,7 @@ struct EditRoutineTitleView: View {
         // 更新処理
         do {
             let titles = try modelContext.fetch(FetchDescriptor<RoutineTitleTemplate>())
-            
-            
-//            if let updateRoutineTitle = titles.first(where: { $0.id == UUID(uuidString: tempRoutineTitleId) }) {
+
             if let updateRoutineTitle = titles.first(where: {$0.id == routineTitle.id }) {
                 updateRoutineTitle.name = routineTitle.name
                 isPresented = false

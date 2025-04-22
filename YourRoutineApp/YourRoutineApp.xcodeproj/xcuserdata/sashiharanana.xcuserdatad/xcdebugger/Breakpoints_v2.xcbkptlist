@@ -14,10 +14,40 @@
             filePath = "YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "fetchTodayDataRoutineTitle(_:isDelete:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CDD62892-E196-4FDB-B5EE-5E84A04B5811 - bd896f578563969d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YourRoutineApp.RoutineTitleListView.fetchTodayDataRoutineTitle(_: YourRoutineApp.RoutineTitleTemplate, isDelete: Swift.Bool) -&gt; ()"
+                  moduleName = "YourRoutineApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sashiharanana/Documents/iOS/Swift/YourRoutineApp/YourRoutineApp/YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105">
+               </Location>
+               <Location
+                  uuid = "CDD62892-E196-4FDB-B5EE-5E84A04B5811 - f1d6c92ad3d35819"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (YourRoutineApp.RoutineTitle) -&gt; Swift.Bool in YourRoutineApp.RoutineTitleListView.fetchTodayDataRoutineTitle(_: YourRoutineApp.RoutineTitleTemplate, isDelete: Swift.Bool) -&gt; ()"
+                  moduleName = "YourRoutineApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sashiharanana/Documents/iOS/Swift/YourRoutineApp/YourRoutineApp/YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,8 +60,8 @@
             filePath = "YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "fetchTodayDataRoutineTitle(_:isDelete:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +76,8 @@
             filePath = "YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "fetchTodayDataRoutineTitle(_:isDelete:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,10 +92,54 @@
             filePath = "YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "fetchTodayDataRoutineTitle(_:isDelete:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E4211130-E752-446F-B0ED-CFB76498E08D - bd896f578563965f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YourRoutineApp.RoutineTitleListView.fetchTodayDataRoutineTitle(_: YourRoutineApp.RoutineTitleTemplate, isDelete: Swift.Bool) -&gt; ()"
+                  moduleName = "YourRoutineApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sashiharanana/Documents/iOS/Swift/YourRoutineApp/YourRoutineApp/YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103">
+               </Location>
+               <Location
+                  uuid = "E4211130-E752-446F-B0ED-CFB76498E08D - bd896f578563965f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YourRoutineApp.RoutineTitleListView.fetchTodayDataRoutineTitle(_: YourRoutineApp.RoutineTitleTemplate, isDelete: Swift.Bool) -&gt; ()"
+                  moduleName = "YourRoutineApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sashiharanana/Documents/iOS/Swift/YourRoutineApp/YourRoutineApp/YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103">
+               </Location>
+               <Location
+                  uuid = "E4211130-E752-446F-B0ED-CFB76498E08D - 10546f54f50bf2da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (YourRoutineApp.RoutineTitle) -&gt; Swift.Bool in YourRoutineApp.RoutineTitleListView.fetchTodayDataRoutineTitle(_: YourRoutineApp.RoutineTitleTemplate, isDelete: Swift.Bool) -&gt; ()"
+                  moduleName = "YourRoutineApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sashiharanana/Documents/iOS/Swift/YourRoutineApp/YourRoutineApp/YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,10 +152,40 @@
             filePath = "YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "fetchTodayDataRoutineTitle(_:isDelete:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7A28294A-9C01-45B0-AF6E-FA2816D088AE - bd896f5785639638"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YourRoutineApp.RoutineTitleListView.fetchTodayDataRoutineTitle(_: YourRoutineApp.RoutineTitleTemplate, isDelete: Swift.Bool) -&gt; ()"
+                  moduleName = "YourRoutineApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sashiharanana/Documents/iOS/Swift/YourRoutineApp/YourRoutineApp/YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100">
+               </Location>
+               <Location
+                  uuid = "7A28294A-9C01-45B0-AF6E-FA2816D088AE - b0d362a4cd27718c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (YourRoutineApp.TodayData) -&gt; Swift.Bool in YourRoutineApp.RoutineTitleListView.fetchTodayDataRoutineTitle(_: YourRoutineApp.RoutineTitleTemplate, isDelete: Swift.Bool) -&gt; ()"
+                  moduleName = "YourRoutineApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sashiharanana/Documents/iOS/Swift/YourRoutineApp/YourRoutineApp/YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,25 +198,9 @@
             filePath = "YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "fetchTodayDataRoutineTitle(_:isDelete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CD83B659-738C-4D55-8FA9-CA19614838AB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YourRoutineApp/Views/Main/RootView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "fetchTodayData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -126,8 +214,8 @@
             filePath = "YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
             landmarkName = "fetchTodayDataRoutineTitle(_:isDelete:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +230,8 @@
             filePath = "YourRoutineApp/Views/Setting/RoutineTitles/RoutineTitleListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
             landmarkName = "fetchTodayDataRoutineTitle(_:isDelete:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -152,7 +240,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4D1BF7C4-2D46-4B10-A42A-8EF1B6BCDAD9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YourRoutineApp/Views/DoneRoutine/DoneRoutineView.swift"
@@ -168,14 +256,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F557DCB0-2BC9-46E1-A907-18784F017783"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YourRoutineApp/Views/Main/RootView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -184,16 +272,236 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EEAEE7E2-317D-4ECC-99C0-77DBD75D6D5E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YourRoutineApp/Views/Main/RootView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9F3767C-95B4-4424-95F3-DBF06532A9B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/Manager/TodayDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "getRoutineTitlesFromTemplateAsync(_:modelContext:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D48C4AB-819B-4848-A4F5-A6BBD3C2395E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/Manager/TodayDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "fetchTemplateData(modelContext:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA46EA2F-A999-46CD-81B4-F32D46EEF751"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/Manager/TodayDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "fetchTemplateData(modelContext:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "10BD4E24-DCA4-4247-B685-6B1375E08A2E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/Manager/TodayDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "getRoutineTitlesFromTemplateAsync(_:modelContext:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0ADAC89-B3BC-4258-B351-3A33922F90CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/YourRoutineAppApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4FC66426-DA63-4796-B7D1-E1CE9325606C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/Manager/TodayDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getRoutineTitlesFromTemplateAsync(_:modelContext:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1055FE17-FE58-4C71-9828-0E6198786114"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/Manager/TodayDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "getRoutineTitlesFromTemplateAsync(_:modelContext:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6879F68B-324E-4AFD-8E53-5AB3F225ECFE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/Manager/TodayDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "fetchTemplateData(modelContext:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "850C3C30-428A-4F15-A4BC-9B6AB13A7545"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/Manager/TodayDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "fetchTodayData(modelContext:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE9E2FA6-F310-429B-B01D-1AA359F231E6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/Manager/TodayDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "fetchTodayData(modelContext:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99DD6742-0B2A-40DD-89B3-2EE6899138B4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourRoutineApp/Manager/TodayDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "createTodayData(modelContext:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "99DD6742-0B2A-40DD-89B3-2EE6899138B4 - af93408e69147303"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for YourRoutineApp.TodayDataManager.createTodayData(modelContext: SwiftData.ModelContext) async -&gt; ()"
+                  moduleName = "YourRoutineApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sashiharanana/Documents/iOS/Swift/YourRoutineApp/YourRoutineApp/YourRoutineApp/Manager/TodayDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40">
+               </Location>
+               <Location
+                  uuid = "99DD6742-0B2A-40DD-89B3-2EE6899138B4 - 96f16ccaeda65306"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for YourRoutineApp.TodayDataManager.createTodayData(modelContext: SwiftData.ModelContext) async -&gt; ()"
+                  moduleName = "YourRoutineApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sashiharanana/Documents/iOS/Swift/YourRoutineApp/YourRoutineApp/YourRoutineApp/Manager/TodayDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40">
+               </Location>
+               <Location
+                  uuid = "99DD6742-0B2A-40DD-89B3-2EE6899138B4 - e66a4420effb5078"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;YourRoutineApp.RoutineTitle&gt;) -&gt; () in YourRoutineApp.TodayDataManager.createTodayData(modelContext: SwiftData.ModelContext) async -&gt; ()"
+                  moduleName = "YourRoutineApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sashiharanana/Documents/iOS/Swift/YourRoutineApp/YourRoutineApp/YourRoutineApp/Manager/TodayDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

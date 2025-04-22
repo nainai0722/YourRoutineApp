@@ -22,6 +22,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct YourRoutineAppApp: App {
+    @Environment(\.scenePhase) var scenePhase
+    @Environment(\.modelContext) private var modelContext
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             UserInfo.self,
@@ -55,7 +57,7 @@ struct YourRoutineAppApp: App {
                     requestNotificationPermission()
                     scheduleNotification(title: "おはよう！", body: "今日の予定を確認しよう☀️", hour: 7, minute: 45)
                     scheduleNotification(title: "おかえり！", body: "おかたづけしよう", hour: 18, minute: 45)
-                    if let image = UIImage(named: "bath") {
+                    if let image = UIImage(named: "default_image1.png") {
                         saveImageToAppGroup(image: image, fileName: "default_image1.png")
                     }
                     if let data = UserDefaults(suiteName: "group.com.nanasashihara.yourroutineapp")?.data(forKey: "pinnedImageData") {
@@ -66,8 +68,17 @@ struct YourRoutineAppApp: App {
                 }
         }
         .modelContainer(sharedModelContainer)
+//        .onChange(of: scenePhase) { oldPhase, newPhase in
+//            if newPhase == .active {
+//                Task {
+//                    await checkAndCreateTodayDataIfNeeded()
+//                }
+//            } else if newPhase == .inactive {
+//                saveLastLoadedDate()
+//            }
+//        }
     }
-    
+        
     @AppStorage("colorSchemeMode") private var colorSchemeMode: String = "system"
     init (){
 //        resetDatabase()

@@ -32,16 +32,6 @@ final class TodayData {
         self.timestamp = timestamp
     }
     
-//    init(timestamp: Date) {
-//        self.routineTitles = [RoutineTitle(name: "あさのしたく", routines: Routine.mockMorningRoutines), RoutineTitle(name: "ゆうがたのしたく", routines: Routine.mockEveningRoutines), RoutineTitle(name: "ねるまえのしたく", routines: Routine.mockSleepTimeRoutines)]
-//        self.kindergartenCalendarType = .none
-//        self.kindergartenCalendarGone = false
-//        self.moodType = nil
-//        self.bookReadDone = false
-//        self.bookCount = 0
-//        self.timestamp = timestamp
-//    }
-    
     init(timestamp: Date, routineTitles: [RoutineTitle] = []) {
         self.routineTitles = routineTitles
         self.kindergartenCalendarType = .none

@@ -11,7 +11,7 @@ import SwiftData
 
 func convertTemplateToRoutine(_ template: RoutineTitleTemplate) -> RoutineTitle {
     let convertedRoutines = template.routines.map { item in
-        Routine(id: item.id, name: item.name, done: false, imageName: item.imageName)
+        Routine(id: item.id, templateId: item.id, name: item.name, done: false, imageName: item.imageName)
         
     }
 //    return RoutineTitle(name: template.name, routines: convertedRoutines)

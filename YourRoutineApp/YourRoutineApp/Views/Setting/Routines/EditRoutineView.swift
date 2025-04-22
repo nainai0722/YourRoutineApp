@@ -170,7 +170,8 @@ struct EditRoutineView: View {
                             existRoutine.imageName = templateRoutine.imageName
                         }
                     } else {
-                        let newRoutine = Routine(name: templateRoutine.name, done: false, imageName: templateRoutine.imageName)
+                        let newRoutine = Routine(id: templateRoutine.id, templateId: templateRoutine.id, name: templateRoutine.name, done: false, imageName: templateRoutine.imageName)
+//                        Routine(name: templateRoutine.name, done: false, imageName: templateRoutine.imageName)
                         routineTitle.routines.append(newRoutine)
                         modelContext.insert(newRoutine)
                     }
