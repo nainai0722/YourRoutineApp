@@ -16,6 +16,8 @@ struct DoneRoutineView: View {
     @State var todayData:TodayData = TodayData()
     @State var routineName: String = ""
     @State var routines :[Routine] = []
+    // 編集画面の情報が反映されないので、Idを保持
+    @State private var selectedRoutineId: UUID?
     @State private var tutorialStep: TutorialStep = .step1_highlightShitakuButton
     var body : some View {
         ZStack {
@@ -25,6 +27,7 @@ struct DoneRoutineView: View {
                 Menu("したくをえらぶ") {
                     ForEach(todayData.routineTitles,id:\.id) { routineTitle in
                         Button(routineTitle.name, action: {
+                            selectedRoutineId = routineTitle.id
                             routines = routineTitle.routines
                             routineName = routineTitle.name
                             if AppStatusManager.isHintShown {
@@ -57,6 +60,11 @@ struct DoneRoutineView: View {
                     }
             }
         }
+        .onAppear() {
+            if let id = selectedRoutineId, let selectedTitle = todayData.routineTitles.first(where: { $0.id == id}) {
+                routines = selectedTitle.routines
+            }
+        }
         .onAppear {
             fetchTodayData()
             UIApplication.shared.isIdleTimerDisabled = true
@@ -64,6 +72,7 @@ struct DoneRoutineView: View {
         .onDisappear {
             UIApplication.shared.isIdleTimerDisabled = false
         }
+        
     }
     
     func updateRoutinesDone() {
