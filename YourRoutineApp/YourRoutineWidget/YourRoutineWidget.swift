@@ -11,12 +11,14 @@ import SwiftUI
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         let imageData = fetchPinnedImageData()
-        return SimpleEntry(date: Date(), imageData: imageData,configuration: ConfigurationAppIntent())
+        let widgetTodayData = fetchWidgetTodayData()
+        return SimpleEntry(date: Date(), imageData: imageData, widgetTodayData: widgetTodayData,configuration: ConfigurationAppIntent())
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
         let imageData = fetchPinnedImageData()
-        return SimpleEntry(date: Date(), imageData: imageData, configuration: configuration)
+        let widgetTodayData = fetchWidgetTodayData()
+        return SimpleEntry(date: Date(), imageData: imageData, widgetTodayData: widgetTodayData, configuration: configuration)
     }
 
     
@@ -29,7 +31,8 @@ struct Provider: AppIntentTimelineProvider {
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             let imageData = fetchPinnedImageData()
-            let entry = SimpleEntry(date: entryDate, imageData: imageData, configuration: configuration)
+            let widgetTodayData = fetchWidgetTodayData()
+            let entry = SimpleEntry(date: entryDate, imageData: imageData, widgetTodayData: widgetTodayData, configuration: configuration)
             entries.append(entry)
         }
 
@@ -50,11 +53,22 @@ struct Provider: AppIntentTimelineProvider {
         print("decodeできた！")
         return decoded
     }
+    func fetchWidgetTodayData() -> WidgetTodayData? {
+        let defaults = UserDefaults(suiteName: appGroupID)
+        guard let data = defaults?.data(forKey: "widgetTodayData"),
+              let decoded = try? JSONDecoder().decode(WidgetTodayData.self, from: data) else {
+            print("何も取れなかった・・・・")
+            return nil
+        }
+        print("decodeできた！")
+        return decoded
+    }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let imageData: ImageData?
+    let widgetTodayData: WidgetTodayData?
     let configuration: ConfigurationAppIntent
 }
 
@@ -76,6 +90,13 @@ struct YourRoutineWidgetEntryView : View {
                     .scaledToFit()
             } else {
                 Text("したくアイコンなし")
+            }
+            if let todayTitles: [String] = entry.widgetTodayData?.routineTitles {
+                let _ = print("\(todayTitles.count) 件)")
+                Text("\(todayTitles.count) 件)")
+                ForEach(todayTitles, id:\.self) { title in
+                    Text(title)
+                }
             }
         }
     }
@@ -136,6 +157,6 @@ extension ConfigurationAppIntent {
 #Preview(as: .systemSmall) {
     YourRoutineWidget()
 } timeline: {
-    SimpleEntry(date: .now, imageData: nil, configuration: .smiley)
-    SimpleEntry(date: .now, imageData: nil, configuration: .starEyes)
+    SimpleEntry(date: .now, imageData: nil, widgetTodayData: nil, configuration: .smiley)
+    SimpleEntry(date: .now, imageData: nil, widgetTodayData: nil, configuration: .starEyes)
 }

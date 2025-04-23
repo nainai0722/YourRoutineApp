@@ -76,6 +76,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Model/ImageData.swift,
+				Model/WidgetTodayData.swift,
 			);
 			target = F8F5E16D2DB3895F00361156 /* YourRoutineWidgetExtension */;
 		};

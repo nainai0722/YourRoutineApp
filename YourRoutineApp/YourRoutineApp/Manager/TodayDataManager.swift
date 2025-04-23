@@ -106,6 +106,18 @@ class TodayDataManager {
         }
     }
     
+    func getTodayData(modelContext: ModelContext, completion:((TodayData) -> Void)) {
+        let fetchDescriptor = FetchDescriptor<TodayData>()
+        if let allDays = try? modelContext.fetch(fetchDescriptor) {
+            let today = Calendar.current.startOfDay(for: Date()) // 今日の0:00のタイムスタンプ
+            if let todayData = allDays.first(where: { Calendar.current.isDate($0.timestamp, inSameDayAs: today) }) {
+//                self.todayData = todayData
+                completion(todayData)
+            }
+        }
+    }
+    
+    
     func fetchTodayData(modelContext: ModelContext) async {
         do {
             let templates = try modelContext.fetch(FetchDescriptor<RoutineTitleTemplate>())

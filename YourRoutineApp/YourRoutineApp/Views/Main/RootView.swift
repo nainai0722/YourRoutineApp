@@ -64,6 +64,39 @@ struct RootView: View {
         isInitialized = true
     }
     
+    let appGroupID = "group.com.nanasashihara.yourroutineapp"
+    
+    func saveTodayDataWidgetToAppGroup(todayData: TodayData) {
+        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupID) else { return }
+        
+        let defaults = UserDefaults(suiteName: appGroupID)
+        
+        var routineTitles: [String] = []
+        
+        let todayData = TodayDataManager.shared.getTodayData(modelContext: modelContext, completion: { todayData in
+            
+            for title in todayData.routineTitles {
+                routineTitles.append(title.name)
+            }
+            
+            let widgetTodayData = WidgetTodayData(routineTitles: routineTitles, timestamp: Date())
+            if let encoded = try? JSONEncoder().encode(widgetTodayData) {
+                defaults?.set(encoded, forKey: "widgetTodayData")
+                print("📦 widgetTodayData 保存成功")
+            }
+//            ここはいらないはず。
+//            let fileURL = containerURL.appendingPathComponent(fileName)
+//            
+//            do {
+//                try data.write(to: fileURL)
+//                return true
+//            } catch {
+//                print("画像の保存に失敗: \(error)")
+//                return false
+//            }
+        })
+    }
+    
     func fetchImageData() async {
         do {
             let allImageData = try modelContext.fetch(FetchDescriptor<ImageData>())
