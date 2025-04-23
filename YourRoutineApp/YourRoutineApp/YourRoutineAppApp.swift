@@ -71,6 +71,9 @@ struct YourRoutineAppApp: App {
         
     @AppStorage("colorSchemeMode") private var colorSchemeMode: String = "system"
     init (){
+        FirebaseApp.configure()
+        UserDefaults.standard.set(true, forKey: "FIRAnalyticsDebugEnabled")
+
 //        resetDatabase()
     }
     
@@ -94,7 +97,6 @@ struct YourRoutineAppApp: App {
             defaults?.set(encoded, forKey: "pinnedImageData")
             print("📦 ImageData 保存成功")
         }
-
         
         let fileURL = containerURL.appendingPathComponent(fileName)
         
