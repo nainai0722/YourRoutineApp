@@ -57,12 +57,14 @@ struct Provider: AppIntentTimelineProvider {
         let defaults = UserDefaults(suiteName: appGroupID)
         guard let data = defaults?.data(forKey: "widgetTodayData"),
               let decoded = try? JSONDecoder().decode(WidgetTodayData.self, from: data) else {
-            print("何も取れなかった・・・・")
+            print("widgetTodayDataが取れなかった・・・・")
             return nil
         }
         print("decodeできた！")
         return decoded
     }
+    
+    
 }
 
 struct SimpleEntry: TimelineEntry {

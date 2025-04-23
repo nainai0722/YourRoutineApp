@@ -158,7 +158,6 @@ extension RoutineTitleTemplate {
             TodayData.self,
             RoutineTitle.self,
             RoutineTitleTemplate.self
-            
         ])
 }
 
