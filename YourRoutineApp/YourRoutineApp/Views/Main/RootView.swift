@@ -28,6 +28,8 @@ struct RootView: View {
 //                .opacity(isFirstLaunch ? 1 : 0)
 //            }
             
+//            ImageCountView()
+            
             if isInitialized {
                 MainTabView()
             } else {
@@ -38,6 +40,10 @@ struct RootView: View {
         }
         .task {
 //            AppStatusManager.isFirstLaunch = true
+            ImageDataManager.shared.fetchImageData(modelContext: modelContext)
+            TodayDataManager.shared.getTodayData(modelContext: modelContext, completion: { (result) in
+                WidgetDataManager.shared.saveTodayDataWidgetToAppGroup(todayData:result , modelContext: modelContext)
+            })
             await initializeApp()
         }
         .onChange(of: scenePhase) { oldPhase, newPhase in
@@ -54,102 +60,12 @@ struct RootView: View {
     func initializeApp() async {
         do {
 //            await fetchTodayData()
-            await fetchImageData()
+//            await fetchImageData()
         } catch {
             print(error)
         }
         //初期化処理
-        
-        
         isInitialized = true
-    }
-    
-    let appGroupID = "group.com.nanasashihara.yourroutineapp"
-    
-    func saveTodayDataWidgetToAppGroup(todayData: TodayData) {
-        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupID) else { return }
-        
-        let defaults = UserDefaults(suiteName: appGroupID)
-        
-        var routineTitles: [String] = []
-        
-        let todayData = TodayDataManager.shared.getTodayData(modelContext: modelContext, completion: { todayData in
-            
-            for title in todayData.routineTitles {
-                routineTitles.append(title.name)
-            }
-            
-            let widgetTodayData = WidgetTodayData(routineTitles: routineTitles, timestamp: Date())
-            if let encoded = try? JSONEncoder().encode(widgetTodayData) {
-                defaults?.set(encoded, forKey: "widgetTodayData")
-                print("📦 widgetTodayData 保存成功")
-            }
-//            ここはいらないはず。
-//            let fileURL = containerURL.appendingPathComponent(fileName)
-//            
-//            do {
-//                try data.write(to: fileURL)
-//                return true
-//            } catch {
-//                print("画像の保存に失敗: \(error)")
-//                return false
-//            }
-        })
-    }
-    
-    func fetchImageData() async {
-        do {
-            let allImageData = try modelContext.fetch(FetchDescriptor<ImageData>())
-            
-            let defaultsData = allImageData.filter({$0.category == .defaults})
-            if defaultsData.isEmpty {
-                for i in 1...22 {
-                    let imageData = ImageData(fileName: "default_image\(i)", category: .defaults, isPinned: true, timestamp: Date())
-                    modelContext.insert(imageData)
-                }
-            }
-            
-            // データが格納されているとき早期リターン
-            if !allImageData.isEmpty {
-                return
-            }
-            
-            // すべてのデータを投入する
-            for i in 1...70 {
-                let imageData = ImageData(fileName: "food-drink_image\(i)", category: .foodDrink, isPinned: false, timestamp: Date())
-                modelContext.insert(imageData)
-            }
-            for i in 1...70 {
-                let imageData = ImageData(fileName: "event_image\(i)", category: .event, isPinned: false, timestamp: Date())
-                modelContext.insert(imageData)
-            }
-            for i in 1...88 {
-                let imageData = ImageData(fileName: "school_image\(i)", category: .school, isPinned: false, timestamp: Date())
-                modelContext.insert(imageData)
-            }
-            for i in 1...88 {
-                let imageData = ImageData(fileName: "life_image\(i)", category: .life, isPinned: false, timestamp: Date())
-                modelContext.insert(imageData)
-            }
-            
-//            for i in 1...22 {
-//                let imageData = ImageData(fileName: "default_image\(i)", category: .defaults, isPinned: true, timestamp: Date())
-//                modelContext.insert(imageData)
-//            }
-            // データベースに保存
-            try modelContext.save()
-            
-            #if DEBUG
-            let allImageData2 = try modelContext.fetch(FetchDescriptor<ImageData>())
-            print("画像データの数 : \(allImageData2.count)")
-            for data in allImageData2 {
-                print("fetchImageData: \(data.fileName)")
-            }
-            #endif
-            
-        } catch {
-            print(error)
-        }
     }
     
     func saveLastLoadedDate() {

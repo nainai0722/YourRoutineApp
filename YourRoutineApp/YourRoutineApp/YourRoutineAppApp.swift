@@ -31,7 +31,9 @@ struct YourRoutineAppApp: App {
             RoutineTitle.self,
             RoutineTemplateItem.self,
             RoutineTitleTemplate.self,
-            ImageData.self
+            ImageData.self,
+            ImageCount.self,
+            WidgetTodayData.self
         ])
         let modelConfiguration = ModelConfiguration(
             schema: schema,
@@ -49,6 +51,7 @@ struct YourRoutineAppApp: App {
 
     var body: some Scene {
         WindowGroup {
+
             RootView()
                 .environment(\.colorScheme, resolveColorScheme() ?? .light)
                 .onAppear() {
@@ -57,8 +60,9 @@ struct YourRoutineAppApp: App {
                     scheduleNotification(title: "おはよう！", body: "今日の予定を確認しよう☀️", hour: 7, minute: 45)
                     scheduleNotification(title: "おかえり！", body: "おかたづけしよう", hour: 18, minute: 45)
                     if let image = UIImage(named: "default_image1.png") {
-                        saveImageToAppGroup(image: image, fileName: "default_image1.png")
+                        WidgetDataManager.shared.saveImageToAppGroup(image: image, fileName: "default_image1.png")
                     }
+                    
                     if let data = UserDefaults(suiteName: "group.com.nanasashihara.yourroutineapp")?.data(forKey: "pinnedImageData") {
                         print("💾 pinnedImageDataあります！サイズ: \(data.count)")
                     } else {
@@ -77,35 +81,11 @@ struct YourRoutineAppApp: App {
 //        resetDatabase()
     }
     
-    let appGroupID = "group.com.nanasashihara.yourroutineapp"
-    
     private func resolveColorScheme() -> ColorScheme? {
         switch colorSchemeMode {
         case "dark": return .dark
         case "light": return .light
         default: return nil
-        }
-    }
-    
-    func saveImageToAppGroup(image: UIImage, fileName: String) -> Bool {
-        guard let data = image.pngData() else { return false }
-        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupID) else { return false }
-        
-        let defaults = UserDefaults(suiteName: appGroupID)
-        let imageData = ImageData(fileName: "bath", category: .life, isPinned: false, timestamp: Date())
-        if let encoded = try? JSONEncoder().encode(imageData) {
-            defaults?.set(encoded, forKey: "pinnedImageData")
-            print("📦 ImageData 保存成功")
-        }
-        
-        let fileURL = containerURL.appendingPathComponent(fileName)
-        
-        do {
-            try data.write(to: fileURL)
-            return true
-        } catch {
-            print("画像の保存に失敗: \(error)")
-            return false
         }
     }
 

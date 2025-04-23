@@ -8,6 +8,11 @@
 import SwiftUI
 import SwiftData
 
+#Preview {
+    PinnedImageDataList()
+        .modelContainer(for: ImageData.self)
+}
+
 @MainActor
 struct PinnedImageDataList: View {
     @Environment(\.modelContext) private var modelContext
@@ -30,9 +35,13 @@ struct PinnedImageDataList: View {
             }
         }
         .onAppear(){
-            print("画像の数\(imageDatas.count)")
+            ImageDataManager.shared.fetchImageData(modelContext: modelContext)
+//            addImageData()
+            ImageDataManager.shared.addDefaultsImageData(modelContext: modelContext, addNum: 23, addNumMax: 23)
+            fetchImageCount()
+//            print("画像の数\(imageDatas.count)")
             for imageData in imageDatas {
-                print("\(imageData.fileName)")
+//                print("\(imageData.fileName)")
             }
         }
         .navigationTitle("お気に入りの画像を設定する")
@@ -49,6 +58,34 @@ struct PinnedImageDataList: View {
                         .padding(.trailing, 30)
                 }
             }
+        }
+    }
+        
+    func fetchImageCount() {
+        do {
+            let allImageDatas = try modelContext.fetch(FetchDescriptor<ImageData>())
+            let allImageCount = try modelContext.fetch(FetchDescriptor<ImageCount>())
+            
+            for category in ImageCategory.allCases {
+                let items = allImageDatas.filter { $0.category == category }
+                
+                let imageCount = allImageCount.filter { $0.category == category }
+                
+                if imageCount.count == items.count {
+                    // 差分がない
+                  return
+                }
+                
+                if imageCount.count == 0 {
+                    let itemsCount = ImageCount(count: items.count, category: category)
+                    
+                    modelContext.insert(itemsCount)
+                    print("\(itemsCount.category.rawValue): 数は\(itemsCount.count)")
+                }
+            }
+            try modelContext.save()
+        } catch {
+            print(error)
         }
     }
     
@@ -127,7 +164,4 @@ struct IconViewWithPinned: View {
     }
 }
 
-#Preview {
-    PinnedImageDataList()
-        .modelContainer(for: ImageData.self)
-}
+
