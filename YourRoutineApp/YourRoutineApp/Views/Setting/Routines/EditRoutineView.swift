@@ -80,7 +80,7 @@ struct EditRoutineView: View {
             
             if let routineTitle = routineTitle {
                 routineTitle.routines.removeAll(where: { $0.id == routine.id } )
-                Analytics.logEvent("deleteRoutine", parameters: [
+                Analytics.logEvent("delete_routine", parameters: [
                     "routineTitle": routineTitle.name,
                     "routineName": routine.name,
                     "imageName": routine.imageName,
@@ -107,7 +107,7 @@ struct EditRoutineView: View {
                 updateRoutine.name = editTitle
                 updateRoutine.imageName = editImage
                 try modelContext.save()
-                Analytics.logEvent("updateRoutine", parameters: [
+                Analytics.logEvent("update_routine", parameters: [
                     "routineTitle": routineTitle.name,
                     "routineName": updateRoutine.name,
                     "imageName": updateRoutine.imageName,
@@ -135,7 +135,7 @@ struct EditRoutineView: View {
                 routineTitle.routines.append(newRoutine)
                 modelContext.insert(newRoutine)
                 print("保存処理完了")
-                Analytics.logEvent("addRoutine", parameters: [
+                Analytics.logEvent("add_routine", parameters: [
                     "routineTitle": routineTitle.name,
                     "routineName": newRoutine.name,
                     "imageName": newRoutine.imageName,
