@@ -66,7 +66,6 @@ class TodayDataManager {
     /// - Returns: TodayData用のルーティンを返す
     func getRoutineTitlesFromTemplateAsync (_ routineTitles: [RoutineTitleTemplate], modelContext: ModelContext, completion:(([RoutineTitle]) -> Void)) async throws {
         var todayRoutineTitle: [RoutineTitle] = []
-//        if routineTitles.isEmpty {
         if try modelContext.fetchCount(FetchDescriptor<RoutineTitleTemplate>()) == 0 {
             await fetchTemplateData(modelContext: modelContext, completion: { (templates) in
                 for title in templates {

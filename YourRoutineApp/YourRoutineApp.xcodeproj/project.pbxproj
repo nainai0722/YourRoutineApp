@@ -8,12 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F86A26A02DB3E6CC00DA0AD1 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */; };
-		F86A26A12DB3E6CC00DA0AD1 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */; };
 		F86A26A42DB3FB2B00DA0AD1 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = F86A26A32DB3FB2B00DA0AD1 /* BottomSheet */; };
 		F8F5E1442DB3889100361156 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F8F5E1432DB3889100361156 /* FirebaseAnalytics */; };
-		F8F5E1552DB3890200361156 /* YourRoutine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E14A2DB3890200361156 /* YourRoutine.framework */; };
-		F8F5E15F2DB3890200361156 /* YourRoutine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E14A2DB3890200361156 /* YourRoutine.framework */; };
-		F8F5E1602DB3890200361156 /* YourRoutine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E14A2DB3890200361156 /* YourRoutine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F8F5E1712DB3895F00361156 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E1702DB3895F00361156 /* WidgetKit.framework */; };
 		F8F5E1732DB3895F00361156 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F5E1722DB3895F00361156 /* SwiftUI.framework */; };
 		F8F5E1842DB3896100361156 /* YourRoutineWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F8F5E16E2DB3895F00361156 /* YourRoutineWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -34,26 +30,12 @@
 			remoteGlobalIDString = F8F5E0B32DB3878D00361156;
 			remoteInfo = YourRoutineApp;
 		};
-		F8F5E1562DB3890200361156 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F8F5E0AC2DB3878D00361156 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F8F5E1492DB3890200361156;
-			remoteInfo = YourRoutine;
-		};
 		F8F5E1582DB3890200361156 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F8F5E0AC2DB3878D00361156 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F8F5E0B32DB3878D00361156;
 			remoteInfo = YourRoutineApp;
-		};
-		F8F5E15D2DB3890200361156 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F8F5E0AC2DB3878D00361156 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F8F5E1492DB3890200361156;
-			remoteInfo = YourRoutine;
 		};
 		F8F5E1822DB3896100361156 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,17 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F8F5E1642DB3890200361156 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F8F5E1602DB3890200361156 /* YourRoutine.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F8F5E1892DB3896100361156 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,33 +65,17 @@
 		F8F5E0B42DB3878D00361156 /* YourRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E0C32DB3878F00361156 /* YourRoutineAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E0CD2DB3878F00361156 /* YourRoutineAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8F5E14A2DB3890200361156 /* YourRoutine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YourRoutine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E1542DB3890200361156 /* YourRoutineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourRoutineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E16E2DB3895F00361156 /* YourRoutineWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = YourRoutineWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F5E1702DB3895F00361156 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F8F5E1722DB3895F00361156 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		F8F5E18B2DB389D700361156 /* YourRoutineWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YourRoutineWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F821201B2DB4BB220061D40F /* Exceptions for "YourRoutineApp" folder in "YourRoutine" target */ = {
+		F821205C2DB863330061D40F /* Exceptions for "YourRoutineApp" folder in "YourRoutineWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				PrivacyInfo.xcprivacy,
-			);
-			target = F8F5E1492DB3890200361156 /* YourRoutine */;
-		};
-		F83F6B512DB38EA200CDE074 /* Exceptions for "YourRoutine" folder in "YourRoutineApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ImageData.swift,
-			);
-			target = F8F5E0B32DB3878D00361156 /* YourRoutineApp */;
-		};
-		F83F6B522DB38EA200CDE074 /* Exceptions for "YourRoutine" folder in "YourRoutineWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ImageData.swift,
+				Model/ImageData.swift,
 			);
 			target = F8F5E16D2DB3895F00361156 /* YourRoutineWidgetExtension */;
 		};
@@ -146,7 +101,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				F83F6B562DB3B9C000CDE074 /* Exceptions for "YourRoutineApp" folder in "YourRoutineApp" target */,
-				F821201B2DB4BB220061D40F /* Exceptions for "YourRoutineApp" folder in "YourRoutine" target */,
+				F821205C2DB863330061D40F /* Exceptions for "YourRoutineApp" folder in "YourRoutineWidgetExtension" target */,
 			);
 			path = YourRoutineApp;
 			sourceTree = "<group>";
@@ -159,15 +114,6 @@
 		F8F5E0D02DB3878F00361156 /* YourRoutineAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = YourRoutineAppUITests;
-			sourceTree = "<group>";
-		};
-		F8F5E14B2DB3890200361156 /* YourRoutine */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				F83F6B512DB38EA200CDE074 /* Exceptions for "YourRoutine" folder in "YourRoutineApp" target */,
-				F83F6B522DB38EA200CDE074 /* Exceptions for "YourRoutine" folder in "YourRoutineWidgetExtension" target */,
-			);
-			path = YourRoutine;
 			sourceTree = "<group>";
 		};
 		F8F5E15A2DB3890200361156 /* YourRoutineTests */ = {
@@ -190,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8F5E15F2DB3890200361156 /* YourRoutine.framework in Frameworks */,
 				F86A26A42DB3FB2B00DA0AD1 /* BottomSheet in Frameworks */,
 				F8F5E1442DB3889100361156 /* FirebaseAnalytics in Frameworks */,
 			);
@@ -210,18 +155,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8F5E1472DB3890200361156 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F8F5E1512DB3890200361156 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8F5E1552DB3890200361156 /* YourRoutine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,11 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				F86A269F2DB3E6CC00DA0AD1 /* Package.resolved */,
-				F8F5E18B2DB389D700361156 /* YourRoutineWidgetExtension.entitlements */,
 				F8F5E0B62DB3878D00361156 /* YourRoutineApp */,
 				F8F5E0C62DB3878F00361156 /* YourRoutineAppTests */,
 				F8F5E0D02DB3878F00361156 /* YourRoutineAppUITests */,
-				F8F5E14B2DB3890200361156 /* YourRoutine */,
 				F8F5E15A2DB3890200361156 /* YourRoutineTests */,
 				F8F5E1742DB3895F00361156 /* YourRoutineWidget */,
 				F8F5E16F2DB3895F00361156 /* Frameworks */,
@@ -259,7 +194,6 @@
 				F8F5E0B42DB3878D00361156 /* YourRoutineApp.app */,
 				F8F5E0C32DB3878F00361156 /* YourRoutineAppTests.xctest */,
 				F8F5E0CD2DB3878F00361156 /* YourRoutineAppUITests.xctest */,
-				F8F5E14A2DB3890200361156 /* YourRoutine.framework */,
 				F8F5E1542DB3890200361156 /* YourRoutineTests.xctest */,
 				F8F5E16E2DB3895F00361156 /* YourRoutineWidgetExtension.appex */,
 			);
@@ -277,16 +211,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		F8F5E1452DB3890200361156 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		F8F5E0B32DB3878D00361156 /* YourRoutineApp */ = {
 			isa = PBXNativeTarget;
@@ -295,13 +219,11 @@
 				F8F5E0B02DB3878D00361156 /* Sources */,
 				F8F5E0B12DB3878D00361156 /* Frameworks */,
 				F8F5E0B22DB3878D00361156 /* Resources */,
-				F8F5E1642DB3890200361156 /* Embed Frameworks */,
 				F8F5E1892DB3896100361156 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F8F5E15E2DB3890200361156 /* PBXTargetDependency */,
 				F8F5E1832DB3896100361156 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -362,29 +284,6 @@
 			productReference = F8F5E0CD2DB3878F00361156 /* YourRoutineAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		F8F5E1492DB3890200361156 /* YourRoutine */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F8F5E1612DB3890200361156 /* Build configuration list for PBXNativeTarget "YourRoutine" */;
-			buildPhases = (
-				F8F5E1452DB3890200361156 /* Headers */,
-				F8F5E1462DB3890200361156 /* Sources */,
-				F8F5E1472DB3890200361156 /* Frameworks */,
-				F8F5E1482DB3890200361156 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				F8F5E14B2DB3890200361156 /* YourRoutine */,
-			);
-			name = YourRoutine;
-			packageProductDependencies = (
-			);
-			productName = YourRoutine;
-			productReference = F8F5E14A2DB3890200361156 /* YourRoutine.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		F8F5E1532DB3890200361156 /* YourRoutineTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8F5E1652DB3890200361156 /* Build configuration list for PBXNativeTarget "YourRoutineTests" */;
@@ -396,7 +295,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				F8F5E1572DB3890200361156 /* PBXTargetDependency */,
 				F8F5E1592DB3890200361156 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -452,9 +350,6 @@
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = F8F5E0B32DB3878D00361156;
 					};
-					F8F5E1492DB3890200361156 = {
-						CreatedOnToolsVersion = 16.3;
-					};
 					F8F5E1532DB3890200361156 = {
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = F8F5E0B32DB3878D00361156;
@@ -485,7 +380,6 @@
 				F8F5E0B32DB3878D00361156 /* YourRoutineApp */,
 				F8F5E0C22DB3878F00361156 /* YourRoutineAppTests */,
 				F8F5E0CC2DB3878F00361156 /* YourRoutineAppUITests */,
-				F8F5E1492DB3890200361156 /* YourRoutine */,
 				F8F5E1532DB3890200361156 /* YourRoutineTests */,
 				F8F5E16D2DB3895F00361156 /* YourRoutineWidgetExtension */,
 			);
@@ -512,14 +406,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8F5E1482DB3890200361156 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F86A26A12DB3E6CC00DA0AD1 /* Package.resolved in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,13 +447,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8F5E1462DB3890200361156 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F8F5E1502DB3890200361156 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -595,20 +474,10 @@
 			target = F8F5E0B32DB3878D00361156 /* YourRoutineApp */;
 			targetProxy = F8F5E0CE2DB3878F00361156 /* PBXContainerItemProxy */;
 		};
-		F8F5E1572DB3890200361156 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F8F5E1492DB3890200361156 /* YourRoutine */;
-			targetProxy = F8F5E1562DB3890200361156 /* PBXContainerItemProxy */;
-		};
 		F8F5E1592DB3890200361156 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F8F5E0B32DB3878D00361156 /* YourRoutineApp */;
 			targetProxy = F8F5E1582DB3890200361156 /* PBXContainerItemProxy */;
-		};
-		F8F5E15E2DB3890200361156 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F8F5E1492DB3890200361156 /* YourRoutine */;
-			targetProxy = F8F5E15D2DB3890200361156 /* PBXContainerItemProxy */;
 		};
 		F8F5E1832DB3896100361156 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -881,76 +750,6 @@
 			};
 			name = Release;
 		};
-		F8F5E1622DB3890200361156 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 58J628MLWX;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutine;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INSTALL_MODULE = YES;
-				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F8F5E1632DB3890200361156 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 58J628MLWX;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSashihara.YourRoutine;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INSTALL_MODULE = YES;
-				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		F8F5E1662DB3890200361156 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -990,7 +789,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = YourRoutineWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = YourRoutineWidget/YourRoutineWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58J628MLWX;
@@ -1019,7 +818,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = YourRoutineWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = YourRoutineWidget/YourRoutineWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58J628MLWX;
@@ -1078,15 +877,6 @@
 			buildConfigurations = (
 				F8F5E0DE2DB3878F00361156 /* Debug */,
 				F8F5E0DF2DB3878F00361156 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F8F5E1612DB3890200361156 /* Build configuration list for PBXNativeTarget "YourRoutine" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8F5E1622DB3890200361156 /* Debug */,
-				F8F5E1632DB3890200361156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

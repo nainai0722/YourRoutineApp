@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 import FirebaseCore
 import FirebaseAnalytics
-import YourRoutine
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
@@ -68,15 +67,6 @@ struct YourRoutineAppApp: App {
                 }
         }
         .modelContainer(sharedModelContainer)
-//        .onChange(of: scenePhase) { oldPhase, newPhase in
-//            if newPhase == .active {
-//                Task {
-//                    await checkAndCreateTodayDataIfNeeded()
-//                }
-//            } else if newPhase == .inactive {
-//                saveLastLoadedDate()
-//            }
-//        }
     }
         
     @AppStorage("colorSchemeMode") private var colorSchemeMode: String = "system"
