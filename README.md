@@ -17,11 +17,19 @@
 
 ---
 
+<p align="center">
+  <img src="Images/image1.png" alt="キャプチャ1" width="150">
+  <img src="Images/image2.png" alt="キャプチャ2" width="150">
+  <img src="Images/image3.png" alt="キャプチャ3" width="150">
+  <img src="Images/image4.png" alt="キャプチャ4" width="150">
+  <img src="Images/image5.png" alt="キャプチャ5" width="150">
+</p>
+
 ## 📸 画面紹介
 
 | トップ画面 | タスク一覧 | タイマー付き進行画面 |
 |------------|------------|-------------------------|
-| ![home](screenshots/home.png) | ![tasks](screenshots/tasks.png) | ![timer](screenshots/timer.png) |
+| ![home](Images/image1.png) | ![tasks](Images/image2.png) | ![timer](Images/image3.png) |
 
 ---
 
