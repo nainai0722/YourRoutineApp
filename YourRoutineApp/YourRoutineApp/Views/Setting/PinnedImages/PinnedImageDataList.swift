@@ -24,40 +24,57 @@ struct PinnedImageDataList: View {
         var id: Self { self }
     }
     var body: some View {
-        VStack {
-            GridViewWithPinned(imageData:selectedImageData.isEmpty ? imageDatas : selectedImageData, onTap: { image in
-                updateIsPinnedImageData(image)
-            })
-            .onChange(of: selectedSection) { oldValue, newValue in
-                selectedImageData = imageDatas.filter {
-                    $0.category == newValue
+        ZStack {
+            VStack {
+                GridViewWithPinned(imageData:selectedImageData.isEmpty ? imageDatas : selectedImageData, onTap: { image in
+                    updateIsPinnedImageData(image)
+                })
+                .onChange(of: selectedSection) { oldValue, newValue in
+                    selectedImageData = imageDatas.filter {
+                        $0.category == newValue
+                    }
                 }
             }
-        }
-        .onAppear(){
-            ImageDataManager.shared.fetchImageData(modelContext: modelContext)
-//            addImageData()
-            ImageDataManager.shared.addDefaultsImageData(modelContext: modelContext, addNum: 23, addNumMax: 23)
-            fetchImageCount()
-//            print("画像の数\(imageDatas.count)")
-            for imageData in imageDatas {
-//                print("\(imageData.fileName)")
+            .onAppear(){
+                ImageDataManager.shared.fetchImageData(modelContext: modelContext)
+                // 追加したい画像があるときは以下を利用する
+                ImageDataManager.shared.addDefaultsImageData(modelContext: modelContext, addNum: 23, addNumMax: 23)
+                fetchImageCount()
+                #if DEBUG
+                ImageDataManager.shared.printImageData(imageDatas: imageDatas)
+                #endif
             }
-        }
-        .navigationTitle("お気に入りの画像を設定する")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
+            .navigationTitle("お気に入りの画像を設定する")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        ForEach(ImageCategory.allCases, id:\.self) { category in
+                            Button("\(category.rawValue)を表示") { selectedSection = category }
+                        }
+                        Button("すべて表示") { selectedImageData = [] }
+                    } label: {
+                        Image(systemName: "line.3.horizontal.decrease.circle")
+                            .frame(width: 50, height: 50)
+                            .padding(.trailing, 30)
+                    }
+                }
+            }
+            VStack {
                 Menu {
                     ForEach(ImageCategory.allCases, id:\.self) { category in
                         Button("\(category.rawValue)を表示") { selectedSection = category }
                     }
                     Button("すべて表示") { selectedImageData = [] }
                 } label: {
-                    Image(systemName: "line.3.horizontal.decrease.circle")
-                        .frame(width: 50, height: 50)
+                    Image(systemName: "line.3.horizontal.decrease.circle.fill")
+                        .font(.system(size: 50))
+                        .padding(20)
+                        .background(.white)
+                        .clipShape(Circle())
                         .padding(.trailing, 30)
                 }
             }
+            .offset(x: 150, y: 350)
         }
     }
         

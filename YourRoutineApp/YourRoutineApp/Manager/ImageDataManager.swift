@@ -11,6 +11,13 @@ import SwiftData
 public final class ImageDataManager {
     static let shared = ImageDataManager()
     
+    func printImageData(imageDatas: [ImageData]) {
+        print("画像の数\(imageDatas.count)")
+        for imageData in imageDatas {
+            print("\(imageData.fileName)")
+        }
+    }
+    
     func checkAndFetchImageData(modelContext: ModelContext) {
         
         fetchImageData(modelContext: modelContext)
