@@ -20,7 +20,6 @@ struct RoutineStampView: View {
                     }
                 }
             }
-//            Spacer()
         }
     }
 }
