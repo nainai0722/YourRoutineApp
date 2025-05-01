@@ -19,11 +19,16 @@ struct RoutineCalendarView:View {
     @State var selectedTodayData: TodayData?
     @State private var showDetail = false
     @Query private var routineTitles: [RoutineTitle]
+    @Environment(\.modelContext) private var modelContext
     @State var isPopover: Bool
     @State var isPresented: Bool
-    var completeTodayDatas: [TodayData] {
-        fillMissingDates(todayDatas: todayDatas)
+    @State private var completeTodayDatas: [TodayData] = []
+
+    @MainActor
+    func loadCompleteTodayDatas() async {
+        completeTodayDatas = await fillMissingDates(todayDatas: todayDatas)
     }
+    
     var body: some View {
         VStack {
             Text("過去の履歴を見る")
@@ -60,6 +65,9 @@ struct RoutineCalendarView:View {
                     }
                 }
             }
+            .task {
+                    await loadCompleteTodayDatas()
+                }
             Spacer()
         }
     }
@@ -76,7 +84,7 @@ struct RoutineCalendarView:View {
         todayDatas.last
     }
     
-    func fillMissingDates(todayDatas: [TodayData]) -> [TodayData] {
+    func fillMissingDates(todayDatas: [TodayData]) async -> [TodayData] {
         guard !todayDatas.isEmpty else { return [] }
 
             let sortedData = todayDatas.sorted(by: { $0.timestamp < $1.timestamp }) // 昇順ソート
@@ -96,8 +104,10 @@ struct RoutineCalendarView:View {
                 filledData.append(existingData)
             } else {
                 // ない場合は新規作成
-                let newData = TodayData(timestamp: currentDate, routineTitles: routineTitles)
-                filledData.append(newData)
+                await TodayDataManager.shared.createTodayData(modelContext: modelContext)
+                await TodayDataManager.shared.getTodayData(modelContext: modelContext, completion: { (todayData) in
+                    filledData.append(todayData)
+                })
             }
             
             // 次の日に進める
