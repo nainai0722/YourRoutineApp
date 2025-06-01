@@ -22,14 +22,20 @@ struct MainTabView: View {
     @State private var tutorialStep: TutorialStep = .step1_highlightShitakuButton
 
     var body: some View {
-//        #if DEBUG
-//        Button("明日分を強制作成") {
-//            Task {
-//                let yesterday = Calendar.current.date(byAdding: .day, value: +1, to: Date())!
-//                await TodayDataManager.shared.forceCheckAndCreate(for: yesterday, context: modelContext)
-//            }
-//        }
-//        #endif
+        #if DEBUG
+        Button("明後日を強制作成") {
+            Task {
+                let yesterday = Calendar.current.date(byAdding: .day, value: +3, to: Date())!
+                await TodayDataManager.shared.forceCheckAndCreate(for: yesterday, context: modelContext)
+            }
+        }
+        Button("今日を強制作成") {
+            Task {
+                let today = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
+                await TodayDataManager.shared.forceCheckAndCreate(for: today, context: modelContext)
+            }
+        }
+        #endif
         ZStack {
             TabView {
                 DoneRoutineView()

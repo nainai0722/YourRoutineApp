@@ -44,6 +44,10 @@ class TodayDataManager {
                 for title in todayData.routineTitles {
                     print("\(title.name)")
                     print("done: \(title.done)")
+                    for routine in title.routines {
+                        print("\(routine.name)")
+                        print("done: \(routine.done)")
+                    }
                 }
                 modelContext.insert(todayData) // SwiftDataに保存
                 do {
@@ -123,12 +127,13 @@ class TodayDataManager {
             let templates = try modelContext.fetch(FetchDescriptor<RoutineTitleTemplate>())
             let allDays = try modelContext.fetch(FetchDescriptor<TodayData>())
                 let today = Calendar.current.startOfDay(for: Date()) // 今日の0:00のタイムスタンプ
-                if let todayData = allDays.first(where: { Calendar.current.isDate($0.timestamp, inSameDayAs: today) }) {
-                    if todayData.routineTitles.isEmpty {
-                        try await TodayDataManager.shared.getRoutineTitlesFromTemplateAsync(templates, modelContext: modelContext,completion: { (routineTitles) in
-                            todayData.routineTitles = routineTitles
-                        })
-                    }
+                if let todayData = allDays.last(where: { Calendar.current.isDate($0.timestamp, inSameDayAs: today) }) {
+//                    if todayData.routineTitles.isEmpty {
+//                        try await TodayDataManager.shared.getRoutineTitlesFromTemplateAsync(templates, modelContext: modelContext,completion: { (routineTitles) in
+//                            todayData.routineTitles = routineTitles
+//                        })
+//                    }
+                    self.todayData = todayData
                 } else {
                     #if DEBUG
                     print("今日のデータがないので新規作成")

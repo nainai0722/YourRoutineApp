@@ -51,9 +51,10 @@ struct YourRoutineAppApp: App {
 
     var body: some Scene {
         WindowGroup {
+            // TODO: 不具合対処用
+            TodayDataBugFixView()
+            return
             
-//            TodayDataBugFixView()
-
             RootView()
                 .environment(\.colorScheme, resolveColorScheme() ?? .light)
                 .onAppear() {

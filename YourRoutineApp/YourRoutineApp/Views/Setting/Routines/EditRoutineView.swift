@@ -148,6 +148,7 @@ struct EditRoutineView: View {
         }
     }
     
+    // 「今日の日付に対応する TodayData の中に、該当するルーチン（Routine）を追加・更新・削除する」関数
     func fetchTodayData(_ templateRoutine: RoutineTemplateItem, isDelete: Bool) {
         let fetchDescriptor = FetchDescriptor<TodayData>()
         let fetchDescriptor2 = FetchDescriptor<RoutineTitleTemplate>()

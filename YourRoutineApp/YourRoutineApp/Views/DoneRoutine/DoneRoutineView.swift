@@ -12,7 +12,6 @@ import SwiftData
 struct DoneRoutineView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var routineTitles: [RoutineTitleTemplate]
-    @Query private var todayDatas: [TodayData]
     @State var todayData:TodayData = TodayData()
     @State var routineName: String = ""
     @State var routines :[Routine] = []
@@ -66,7 +65,7 @@ struct DoneRoutineView: View {
             }
         }
         .onAppear {
-            fetchTodayData()
+//            fetchTodayData()
             UIApplication.shared.isIdleTimerDisabled = true
         }
         .onDisappear {
@@ -114,15 +113,15 @@ struct DoneRoutineView: View {
         return routines.allSatisfy(\.done)
     }
     
-    private func fetchTodayData() {
-        let fetchDescriptor = FetchDescriptor<TodayData>()
-        if let allDays = try? modelContext.fetch(fetchDescriptor) {
-            let today = Calendar.current.startOfDay(for: Date()) // 今日の0:00のタイムスタンプ
-            if let todayData = allDays.first(where: { Calendar.current.isDate($0.timestamp, inSameDayAs: today) }) {
-                self.todayData = todayData
-            }
-        }
-    }
+//    private func fetchTodayData() {
+//        let fetchDescriptor = FetchDescriptor<TodayData>()
+//        if let allDays = try? modelContext.fetch(fetchDescriptor) {
+//            let today = Calendar.current.startOfDay(for: Date()) // 今日の0:00のタイムスタンプ
+//            if let todayData = allDays.first(where: { Calendar.current.isDate($0.timestamp, inSameDayAs: today) }) {
+//                self.todayData = todayData
+//            }
+//        }
+//    }
 }
 
 extension Routine {

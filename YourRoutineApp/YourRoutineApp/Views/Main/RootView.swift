@@ -49,7 +49,7 @@ struct RootView: View {
         .onChange(of: scenePhase) { oldPhase, newPhase in
             if newPhase == .active {
                 Task {
-                    await checkAndCreateTodayDataIfNeeded()
+                    await TodayDataManager.shared.fetchTodayData(modelContext: modelContext)
                 }
             } else if newPhase == .inactive {
                 saveLastLoadedDate()
